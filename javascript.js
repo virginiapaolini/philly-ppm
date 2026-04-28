@@ -1,3 +1,4 @@
+import 'css/style.css';
 document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('hamburger-menu');
     const menu = document.getElementById('mega-menù');

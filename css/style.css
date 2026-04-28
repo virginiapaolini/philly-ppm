@@ -1,4 +1,6 @@
-/* generale */
+@import "tailwindcss";
+
+
 :root {
     --inq-blue: #004b8d;
     --inq-yellow: #fed561;
