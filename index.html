@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="javascript.js" defer></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
     <div class="ad-wallpaper">
         <div class="layout-ad-wrapper overflow-clip">
             <!-- sticky che viene disabilitato alle volte-->
-            <header id="app-bar" class="header">
+    <header id="app-bar" class="header">
                 <div class="ad-masthead-wrapper bg-custom-gray border-bottom overflow-hidden">
                     <div class="container d-flex flex-column align-items-center py-3">
                         <div class="ad-label mb-2" style="font-size: 10px; text-transform: uppercase; color: #999;">advertisement</div>
@@ -32,9 +33,9 @@
                             <div class="col-lg-4 d-none d-lg-flex flex-column">
                                 <div class="header-date small text-muted mb-1 fw-bold">Tuesday, April 28, 2026</div>
                                 <div class="header-links d-flex gap-2 small">
-                                    <a href="#" class="text-dark text-decoration-none">Today's Paper</a>
+                                    <a href="" class="text-dark text-decoration-none">Today's Paper</a>
                                     <span class="text-muted">|</span>
-                                    <a href="#" class="text-dark text-decoration-none">Newsletters</a>
+                                    <a href="" class="text-dark text-decoration-none">Newsletters</a>
                                 </div>
                             </div>
                         <!--logo inquirer-->
@@ -56,31 +57,272 @@
                     <div class="d-none d-lg-flex bg-white border-top align-items-center py-2">
                         <div class="container-max d-flex align-items-center">
                             <div class="d-flex align-items-center gap-3 me-4">
-                                <button class="btn-hamburger"><span></span><span></span><span></span></button>
-                                <button class="btn-search-trigger bg-transparent border-0" data-bs-toggle="collapse" data-bs-target="#searchDropdown">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
-                                </button>
+                                <div class="d-none d-lg-flex align-items-center gap-2">
+                                    <button id="hamburger-menu" type="button" role="button" aria-label="Full navigation" aria-haspopup="true" aria-expanded="false" class="d-flex flex-column justify-content-center align-items-center border-0 bg-white" style="width: 20px; height: 12px; padding: 0; cursor: pointer;">
+                                        <div style="height: 2px; width: 16px; background: black; border-radius: 10px; margin-bottom: 3px; transition: 0.3s;"></div>
+                                        <div style="height: 2px; width: 16px; background: black; border-radius: 10px; margin-bottom: 3px; transition: 0.3s;"></div>
+                                        <div style="height: 2px; width: 16px; background: black; border-radius: 10px; transition: 0.3s;"></div>
+                                    </button>
+
+                                    <button class="border-0 bg-white p-2" aria-label="Search">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+                                    </button>
+                                </div>
                             </div>
                             <nav class="nav main-nav-links gap-3">
-                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="#">News</a>
-                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="#">Sports</a>
-                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="#">Business</a>
-                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="#">Opinion</a>
-                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="#">Politics</a>
-                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="#">Entertainment</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">News</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Sports</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Business</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Opinion</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Politics</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Entertainment</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Life</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Food</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Health</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Real Estate</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Philly First</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Obituaries</a>
+                                <a class="nav-link p-0 text-uppercase fw-bold text-dark" href="">Legal Notices</a>
                             </nav>
                         </div>
                     </div>
                 </nav>
-            </header>
+        <div id="mega-menù" class="position-absolute start-0 w-100 shadow-sm bg-white overflow-auto"
+             style="top: 100%; z-index: 1050;" aria-hidden="true">
 
-            <article>
-            </article>
+            <div class="container-xl px-0">
+                <div class="row g-0 flex-column flex-lg-row">
 
-            <footer>
-            </footer>
+                    <div class="col-lg-9 pt-4 pb-lg-5 px-3 px-sm-4">
+                        <div class="row">
+
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <nav class="d-flex flex-column mb-4">
+                                    <a href="#" class="text-dark text-decoration-none fw-bold text-uppercase pb-2 border-bottom border-light-subtle" data-link-type="mega-nav" aria-label="News">News</a>
+                                    <div class="d-flex flex-column pt-2 gap-1 ps-2">
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Today’s Paper</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Philadelphia</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Pennsylvania</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">New Jersey</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Politics</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Nation & World</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Education</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Health & Science</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Business</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Real Estate</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="/weather/">Weather</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Horoscopes</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Obituaries</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Philly First</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Inquirer LIVE</a>
+                                    </div>
+                                </nav>
+
+                                <nav class="d-flex flex-column">
+                                    <a href="/sports/" class="text-dark text-decoration-none fw-bold text-uppercase pb-2 border-bottom border-light-subtle" data-link-type="mega-nav" aria-label="Sports">Sports</a>
+                                    <div class="d-flex flex-column pt-2 gap-1 ps-2">
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Eagles</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Phillies</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Sixers</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Flyers</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Soccer</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">WNBA</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">College Sports</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Sports Columnists</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Gameday Central</a>
+                                    </div>
+                                </nav>
+                            </div>
+
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <nav class="d-flex flex-column mb-4">
+                                    <a href="/food/" class="text-dark text-decoration-none fw-bold text-uppercase pb-2 border-bottom border-light-subtle" data-link-type="mega-nav" aria-label="Food">Food</a>
+                                    <div class="d-flex flex-column pt-2 gap-1 ps-2">
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">The 76 Restaurant Guide</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Craig LaBan</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Restaurants</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Inquirer Food Festival</a>
+                                    </div>
+                                </nav>
+
+                                <nav class="d-flex flex-column">
+                                    <a href="/entertainment/" class="text-dark text-decoration-none fw-bold text-uppercase pb-2 border-bottom border-light-subtle" data-link-type="mega-nav" aria-label="Entertainment">Entertainment</a>
+                                    <div class="d-flex flex-column pt-2 gap-1 ps-2">
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Things To Do</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Arts & Culture</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Music</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Shore Guide</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Comics</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Puzzles</a>
+                                    </div>
+                                </nav>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-4 mb-4">
+                                <nav class="d-flex flex-column mb-3">
+                                    <a href="/newsletters/" class="text-dark text-decoration-none fw-bold text-uppercase pb-2 border-bottom border-light-subtle" data-link-type="mega-nav">Newsletters</a>
+                                </nav>
+                                <nav class="d-flex flex-column mb-3">
+                                    <a href="/opinion/" class="text-dark text-decoration-none fw-bold text-uppercase pb-2 border-bottom border-light-subtle" data-link-type="mega-nav">Opinion</a>
+                                    <div class="d-flex flex-column pt-2 gap-1 ps-2">
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Columnists</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Editorials</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Letters to the Editor</a>
+                                        <a class="text-primary text-decoration-none fw-light small" href="#">Commentary</a>
+                                    </div>
+                                </nav>
+                                <nav class="d-flex flex-column mb-3">
+                                    <a href="https://www.phillyfavorites.com/" class="text-dark text-decoration-none fw-bold text-uppercase pb-2 border-bottom border-light-subtle" data-link-type="mega-nav">PHILLY FAVORITES</a>
+                                </nav>
+                                <nav class="d-flex flex-column">
+                                    <a href="/business/top-workplaces/" class="text-dark text-decoration-none fw-bold text-uppercase pb-2 border-bottom border-light-subtle" data-link-type="mega-nav">TOP WORKPLACES</a>
+                                </nav>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 bg-white border-start-lg pt-3 pb-5 px-3 px-sm-4">
+                        <div class="row">
+                            <nav class="col-sm-6 col-lg-12 mb-4" aria-label="List Get In Touch">
+                                <div class="fw-bold text-uppercase small pb-2 border-bottom border-light-subtle mb-2">Get In Touch</div>
+                                <div class="d-flex flex-column gap-2">
+                                    <a class="text-primary text-decoration-none small" href="#">About The Inquirer</a>
+                                    <a class="text-primary text-decoration-none small" href="#">Advertise</a>
+                                    <a class="text-primary text-decoration-none small" href="#">Contact Us</a>
+                                    <a class="text-primary text-decoration-none small" href="#">Subscriber Services</a>
+                                    <a class="text-primary text-decoration-none small" href="#">Careers</a>
+                                    <a class="text-primary text-decoration-none small" href="#">Subscribe</a>
+                                </div>
+                            </nav>
+
+                            <nav class="col-sm-6 col-lg-12" aria-label="List Giving">
+                                <div class="fw-bold text-uppercase small pb-2 border-bottom border-light-subtle mb-2">Giving</div>
+                                <div class="d-flex flex-column gap-2">
+                                    <a class="text-primary text-decoration-none small" href="#">Donate to The Inquirer</a>
+                                    <a class="text-primary text-decoration-none small" href="#">Other Ways to Contribute</a>
+                                    <a class="text-primary text-decoration-none small" href="#">About The Lenfest Institute</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-    </div>
+</header>
+
+<article>
+</article>
+
+<!-- footer bianco con notizie e altro -->
+<footer class="py-5 mt-5 border-top border-secondary-subtle">
+                <div class="container-xl" style="max-width: 1240px;">
+                    <div class="row d-none d-lg-flex">
+                        <div class="col-lg-3">
+                            <h6 class="text-uppercase fw-bold mb-3">Get in Touch</h6>
+                            <div class="d-flex flex-column gap-2">
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">About The Inquirer</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Advertise</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Gift & Group Subscriptions</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Contact Us</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Become an Affiliate</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Subscriber Services</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Newsroom Staff</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Confidential Tips</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Licensing & Permissions</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Reprints</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Careers</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Delivery Jobs</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Inquirer Store</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Legal Notices</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Death Notices</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Subscribe</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <h6 class="text-uppercase fw-bold mb-3">News</h6>
+                            <div class="d-flex flex-column gap-2">
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Today’s Paper</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">News</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Sports</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Entertainment</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Business</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Health & Science</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Food</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Opinion</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Philly First</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Inquirer LIVE</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Archives</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Site Map</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <h6 class="text-uppercase fw-bold mb-3">Giving</h6>
+                            <div class="d-flex flex-column gap-2">
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Donate to The Inquirer</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">About High-Impact Journalism</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">Other Ways to Contribute</a>
+                                <a href="#" class="text-black text-decoration-none hover-underline small fw-medium">About The Lenfest Institute</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <h6 class="text-uppercase fw-bold mb-3">Mobile Apps</h6>
+                            <div class="d-flex flex-column gap-2">
+                                <a href="https://apps.apple.com/" class="text-black text-decoration-none hover-underline small fw-medium">Apple iOS</a>
+                                <a href="https://play.google.com/" class="text-black text-decoration-none hover-underline small fw-medium">Google Android</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row d-none d-sm-flex d-lg-none">
+                        <div class="col-6 mb-5">
+                        </div>
+                        <div class="col-6 mb-5">
+                        </div>
+                    </div>
+
+                    <div class="d-flex d-sm-none flex-column gap-4">
+                    </div>
+                </div>
+            </footer>
+<!-- footer grigio copyright e social -->
+<footer class="bg-light py-4">
+                <div class="container-xl" style="max-width: 1240px;">
+                    <div class="row align-items-center flex-column flex-lg-row-reverse">
+                        <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end mb-4 mb-lg-0">
+                            <a href="#" class="text-decoration-none me-4" aria-label="X">
+                                <img src="https://placehold.co/18x18/000000/FFFFFF?text=X" alt="X" class="rounded-1" width="18" height="18">
+                            </a>
+
+                            <a href="#" class="text-decoration-none me-4" aria-label="Facebook">
+                                <img src="https://placehold.co/18x18/000000/FFFFFF?text=fb" alt="Facebook" class="rounded-1" width="18" height="18">
+                            </a>
+
+                            <a href="#" class="text-decoration-none" aria-label="Instagram">
+                                <img src="https://placehold.co/18x18/000000/FFFFFF?text=ig" alt="Instagram" class="rounded-1" width="18" height="18">
+                            </a>
+                        </div>
+
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <p class="mb-1 fw-medium small text-secondary">© 2026 The Philadelphia Inquirer, LLC</p>
+                            <div class="small text-secondary">
+                                <a href="#" class="text-secondary text-decoration-none fw-medium">Terms of Use</a> /
+                                <a href="#" class="text-secondary text-decoration-none fw-medium px-1">Privacy Policy</a> /
+                                <a href="#" class="text-secondary text-decoration-none fw-medium px-1">AI Usage Policy</a> /
+                                <a href="#" class="text-secondary text-decoration-none fw-medium px-1">California Notice</a> /
+                                <a href="#" class="text-secondary text-decoration-none fw-medium px-1">Do Not Sell My Data</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</footer>
+
+</div>
+</div>
 </div>
 </div>
 </body>

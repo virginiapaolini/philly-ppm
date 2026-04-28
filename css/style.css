@@ -1,172 +1,66 @@
-
-
-/* colore grigio esatto visto nell'ispeziona */
-.bg-custom-gray {
-    background-color: #ececec;
+/* generale */
+:root {
+    --inq-blue: #004b8d;
+    --inq-yellow: #fed561;
+    --inq-gray-light: #f6f6f6;
+    --inq-border: #ddd;
 }
 
+.container-max {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bg-custom-gray { background-color: #ececec; }
+.transition-base { transition: all 0.3s ease-in-out; }
+
+/* pubblicità */
 .ad-masthead-wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-}
-
-/* gestione delle altezze responsive */
-.ad-masthead-wrapper {
-    min-height: 90px; /* Mobile di base */
+    min-height: 90px;
 }
 
 @media (min-width: 992px) {
-    .ad-masthead-wrapper {
-        min-height: 250px; /* desktop */
-    }
+    .ad-masthead-wrapper { min-height: 250px; }
 }
 
-/* Stile per la scritta ADVERTISEMENT
-.ad-label {
-    font-family: 'Helvetica', Arial, sans-serif;
-    font-size: 9px;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 300;
-}
-*/
-
-/* stile per l'immagine placeholder per farla sembrare un vero banner */
 .ad-image {
     max-width: 100%;
     height: auto;
-    border: 1px solid #ddd;
+    border: 1px solid var(--inq-border);
 }
 
-/* layout generale */
-.container-max {
-    max-width: 1240px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+/* nav e logo*/
+.navbar-custom {
+    position: relative;
+    z-index: 1001; /* sopra al mega menu */
 }
 
-/*  navbar */
-.border-bottom-2 {
-    border-bottom: 2px solid #dee2e6;
-}
-
-.main-logo h1 {
-    font-family: serif;
-    letter-spacing: -2px;
-    font-size: 2.5rem;
+.inquirer-logo {
     color: #000;
+    transition: all 0.5s ease-in-out;
+    width: 200px;
+    height: auto;
 }
 
-/* bottoni e links */
-.btn-subscribe {
-    background-color: #444bf0;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    padding: 8px 20px;
-    border: none;
-    transition: background 0.3s ease;
-}
+@media (min-width: 576px) { .inquirer-logo { width: 325px; } }
+@media (min-width: 992px) { .inquirer-logo { width: 500px; } }
 
-.btn-subscribe:hover {
-    background-color: #3339c7;
-    color: white;
-}
-
-.btn-signin {
-    color: #000;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: underline;
-    font-size: 0.8rem;
-}
-
-/* barra nav sotto al titolo */
-.sub-nav {
-    height: 52px;
-}
-
-.main-nav-links .nav-link {
-    color: #000;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.75rem;
-    letter-spacing: 0.5px;
-    padding: 10px 15px;
-}
-
-.main-nav-links .nav-link:hover {
-    color: #444bf0;
-}
-
-/* icona hamburger */
-.btn-hamburger {
-    background: none;
-    border: none;
-    padding: 0;
-}
-
-.btn-hamburger span {
-    display: block;
-    width: 18px;
-    height: 2px;
-    background: black;
-    margin: 3px 0;
-}
-
-/* dropdown user pos */
-.user-dropdown-menu {
-    width: 250px;
-    z-index: 1050;
-    top: 100%;
-    margin-top: 10px;
-}
-
-.dot-indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-/* search dropdown posizione */
-.search-dropdown-container {
-    top: 62px; /* regola in base all'altezza mobile dell'header */
-    z-index: 1000;
-}
-
-@media (min-width: 992px) {
-    .search-dropdown-container {
-        top: 127px; /* altezza header su desktop */
-    }
-}
-
-/* transizione fluida per la comparsa della barra */
-.transition-base {
-    transition: all 0.3s ease-in-out;
-}
-
-/* navbar slim  */
-.navbar-slim {
-    height: 62px;
-    z-index: 1050; /* perché è sopra a tutto */
-}
-
-/* taasto subscribe GIALLO (Inquirer Brand) */
+/* bottoni */
 .btn-subscribe-yellow {
-    background-color: #fed561;
-    border: 1px solid #fed561;
+    background-color: var(--inq-yellow);
+    border: 1px solid var(--inq-yellow);
     color: #000;
     font-size: 0.8rem;
-    padding: 6px 20px;
+    font-weight: 700;
+    padding: 8px 24px;
     border-radius: 4px;
-    transition: opacity 0.2s;
+    text-transform: uppercase;
 }
 
 .btn-subscribe-yellow:hover {
@@ -174,58 +68,157 @@
     color: #000;
 }
 
-/* controllo js */
-.navbar-slim.is-visible {
-    invisible: visible !important;
-    opacity: 1 !important;
+.btn-signin {
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.8rem;
 }
 
-/* per bilanciare i tre blocchi della navbar (dx, centro, dx) */
-.flex-1 {
-    flex: 1;
+.btn-signin:hover { text-decoration: underline; }
+
+/* categorie */
+.main-nav-links .nav-link {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    padding: 5px 10px;
+    transition: color 0.2s;
 }
 
-/* hmmburger span style (riutilizzato) */
+.main-nav-links .nav-link:hover {
+    color: var(--inq-blue);
+}
+
+/* hamburger icona */
+.btn-hamburger {
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
 .btn-hamburger span {
     display: block;
     width: 18px;
     height: 2px;
     background: black;
-    margin: 3px 0;
     border-radius: 2px;
 }
 
-.inquirer-logo {
-    /* colore del logo: eredita dal testo del genitore */
-    color: #000;
+/* --- MEGA MENU LOGIC --- */
 
-    /* animazione fluida (duration-500) */
-    transition: all 0.5s ease-in-out;
+/* Stato Iniziale: Nascosto */
+#mega-menù {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%; /* Si posiziona esattamente sotto la navbar */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 9999 !important; /* Deve stare sopra a tutto */
+    transition: opacity 0.2s ease-in-out;
+    max-height: 85vh;
+    overflow-y: auto;
+}
 
-    /* dimensioni base per mobile (se non vuoi nasconderlo del tutto) */
-    width: 200px;
-    height: auto;
+/* Stato Attivo: Mostrato (attivato dal JS) */
+#mega-menù.is-active {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Correzione per la Navbar affinché il menu si posizioni bene */
+.navbar-custom {
+    position: relative; /* Indispensabile per il posizionamento absolute del menu */
+}
+
+/* Stile per i link nel menu (per richiamare l'originale) */
+.text-primary {
+    color: #004b8d !important; /* Il blu Inquirer */
+    font-size: 0.9rem;
+    margin-bottom: 4px;
     display: block;
-
-    /* effetto opacità iniziale */
-    opacity: 1;
 }
 
-/* su schermi medi (sm:w-[325px]) */
-@media (min-width: 576px) {
-    .inquirer-logo {
-        width: 325px;
-    }
+.text-primary:hover {
+    text-decoration: underline !important;
 }
 
-/* su schermi grandi (lg:w-[500px]) */
-@media (min-width: 992px) {
-    .inquirer-logo {
-        width: 500px;
-    }
+/* titoli sezioni */
+.inq-title {
+    font-family: 'Helvetica Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding-bottom: 5px;
 }
 
-/* hover */
-.inquirer-logo:hover {
-    opacity: 0.8;
+.inq-divider {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+/* link sezioni sx */
+.inq-links a {
+    color: var(--inq-blue);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.inq-links a:hover { text-decoration: underline; }
+
+/* sidebar */
+.bg-light-gray {
+    background-color: var(--inq-gray-light);
+    border-left: 1px solid #eee;
+}
+
+.inq-links-alt a {
+    color: #333;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: block;
+    padding: 2px 0;
+}
+
+.inq-links-alt a:hover { text-decoration: underline; }
+
+/* navbar */
+.navbar-slim {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 62px;
+    background: white;
+    z-index: 2000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-slim.is-visible {
+    transform: translateY(0);
+}
+
+/* offcanvas */
+.offcanvas { width: 300px !important; }
+.offcanvas-body { overflow-y: auto; }
+
+.overflow-hidden {
+    overflow: hidden !important;
 }
