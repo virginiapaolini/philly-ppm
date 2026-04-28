@@ -1,0 +1,231 @@
+
+
+/* colore grigio esatto visto nell'ispeziona */
+.bg-custom-gray {
+    background-color: #ececec;
+}
+
+.ad-masthead-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* gestione delle altezze responsive */
+.ad-masthead-wrapper {
+    min-height: 90px; /* Mobile di base */
+}
+
+@media (min-width: 992px) {
+    .ad-masthead-wrapper {
+        min-height: 250px; /* desktop */
+    }
+}
+
+/* Stile per la scritta ADVERTISEMENT
+.ad-label {
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 9px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+*/
+
+/* stile per l'immagine placeholder per farla sembrare un vero banner */
+.ad-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+/* layout generale */
+.container-max {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*  navbar */
+.border-bottom-2 {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.main-logo h1 {
+    font-family: serif;
+    letter-spacing: -2px;
+    font-size: 2.5rem;
+    color: #000;
+}
+
+/* bottoni e links */
+.btn-subscribe {
+    background-color: #444bf0;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 8px 20px;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.btn-subscribe:hover {
+    background-color: #3339c7;
+    color: white;
+}
+
+.btn-signin {
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 0.8rem;
+}
+
+/* barra nav sotto al titolo */
+.sub-nav {
+    height: 52px;
+}
+
+.main-nav-links .nav-link {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    padding: 10px 15px;
+}
+
+.main-nav-links .nav-link:hover {
+    color: #444bf0;
+}
+
+/* icona hamburger */
+.btn-hamburger {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.btn-hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: black;
+    margin: 3px 0;
+}
+
+/* dropdown user pos */
+.user-dropdown-menu {
+    width: 250px;
+    z-index: 1050;
+    top: 100%;
+    margin-top: 10px;
+}
+
+.dot-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* search dropdown posizione */
+.search-dropdown-container {
+    top: 62px; /* regola in base all'altezza mobile dell'header */
+    z-index: 1000;
+}
+
+@media (min-width: 992px) {
+    .search-dropdown-container {
+        top: 127px; /* altezza header su desktop */
+    }
+}
+
+/* transizione fluida per la comparsa della barra */
+.transition-base {
+    transition: all 0.3s ease-in-out;
+}
+
+/* navbar slim  */
+.navbar-slim {
+    height: 62px;
+    z-index: 1050; /* perché è sopra a tutto */
+}
+
+/* taasto subscribe GIALLO (Inquirer Brand) */
+.btn-subscribe-yellow {
+    background-color: #fed561;
+    border: 1px solid #fed561;
+    color: #000;
+    font-size: 0.8rem;
+    padding: 6px 20px;
+    border-radius: 4px;
+    transition: opacity 0.2s;
+}
+
+.btn-subscribe-yellow:hover {
+    background-color: #e5bf57;
+    color: #000;
+}
+
+/* controllo js */
+.navbar-slim.is-visible {
+    invisible: visible !important;
+    opacity: 1 !important;
+}
+
+/* per bilanciare i tre blocchi della navbar (dx, centro, dx) */
+.flex-1 {
+    flex: 1;
+}
+
+/* hmmburger span style (riutilizzato) */
+.btn-hamburger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: black;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+.inquirer-logo {
+    /* colore del logo: eredita dal testo del genitore */
+    color: #000;
+
+    /* animazione fluida (duration-500) */
+    transition: all 0.5s ease-in-out;
+
+    /* dimensioni base per mobile (se non vuoi nasconderlo del tutto) */
+    width: 200px;
+    height: auto;
+    display: block;
+
+    /* effetto opacità iniziale */
+    opacity: 1;
+}
+
+/* su schermi medi (sm:w-[325px]) */
+@media (min-width: 576px) {
+    .inquirer-logo {
+        width: 325px;
+    }
+}
+
+/* su schermi grandi (lg:w-[500px]) */
+@media (min-width: 992px) {
+    .inquirer-logo {
+        width: 500px;
+    }
+}
+
+/* hover */
+.inquirer-logo:hover {
+    opacity: 0.8;
+}
