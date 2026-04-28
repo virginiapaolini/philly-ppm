@@ -38,7 +38,8 @@
 /* nav e logo*/
 .navbar-custom {
     position: relative;
-    z-index: 1001; /* sopra al mega menu */
+    z-index: 10001;
+    overflow: visible !important;
 }
 
 .inquirer-logo {
@@ -111,39 +112,46 @@
     border-radius: 2px;
 }
 
-/* --- MEGA MENU LOGIC --- */
+/* --- mega menù --- */
 
-/* Stato Iniziale: Nascosto */
+/* stato iniziale: hidden!! */
 #mega-menù {
     display: none;
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 100%; /* Si posiziona esattamente sotto la navbar */
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: white;
-    z-index: 9999 !important; /* Deve stare sopra a tutto */
+    z-index: 999999 !important;
     transition: opacity 0.2s ease-in-out;
-    max-height: 85vh;
+    max-height: 90vh;
     overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-bottom: 1px solid #ddd;
 }
 
-/* Stato Attivo: Mostrato (attivato dal JS) */
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* stato attivo per js */
 #mega-menù.is-active {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
 }
 
-/* Correzione per la Navbar affinché il menu si posizioni bene */
+/* navbar affinché il menu si posizioni bene */
 .navbar-custom {
-    position: relative; /* Indispensabile per il posizionamento absolute del menu */
+    position: relative;
 }
 
-/* Stile per i link nel menu (per richiamare l'originale) */
+/* link nel menu */
 .text-primary {
-    color: #004b8d !important; /* Il blu Inquirer */
+    color: #000000 !important;
     font-size: 0.9rem;
     margin-bottom: 4px;
     display: block;
@@ -213,6 +221,12 @@
 
 .navbar-slim.is-visible {
     transform: translateY(0);
+}
+
+.header {
+    overflow: visible !important;
+    position: relative;
+    z-index: 10000;
 }
 
 /* offcanvas */
