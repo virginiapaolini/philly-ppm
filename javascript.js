@@ -1,29 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('hamburger-menu');
-    const menu = document.getElementById('mega-menù');
 
-    if (btn && menu) {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
+    document.addEventListener('DOMContentLoaded', function() {
+    // 1. Gestione Data Odierna
+    const dateEl = document.getElementById('current-date');
+    if(dateEl) {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateEl.innerText = new Date().toLocaleDateString('en-US', options);
+}
 
-            // Toggle della classe custom per mostrare/nascondere
-            menu.classList.toggle('is-active');
+    // toggle Mega Menu
+    const menuBtn = document.getElementById('hamburger-btn');
+    const megaMenu = document.getElementById('mega-menu');
 
-            // Aggiorna l'attributo aria per l'accessibilità
-            const isOpen = menu.classList.contains('is-active');
-            btn.setAttribute('aria-expanded', isOpen);
+    if(menuBtn && megaMenu) {
+    menuBtn.addEventListener('click', function() {
+    megaMenu.classList.toggle('d-none');
+    // Effetto semplice rotazione hamburger
+    this.classList.toggle('active');
+});
+}
 
-            console.log("Stato menu aperto:", isOpen);
-        });
-
-        // Chiudi il menu se clicchi ovunque fuori
-        document.addEventListener('click', (e) => {
-            if (!menu.contains(e.target) && !btn.contains(e.target)) {
-                menu.classList.remove('is-active');
-                btn.setAttribute('aria-expanded', 'false');
-            }
-        });
-    } else {
-        console.error("Errore: ID 'hamburger-menu' o 'mega-menù' non trovati!");
-    }
+    // chiudi menu cliccando fuori
+    window.addEventListener('click', function(e) {
+    if (!menuBtn.contains(e.target) && !megaMenu.contains(e.target)) {
+    megaMenu.classList.add('d-none');
+}
+});
 });
