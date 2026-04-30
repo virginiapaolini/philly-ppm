@@ -1,24 +1,314 @@
-/* 1. CONFIGURAZIONE FONT (Unificata) */
+/* CONFIGURAZIONE FONT */
 @font-face {
-    font-family: 'Grot10';
-    src: url('../fonts/Grot10-Regular-webfont-tth.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-thinitalic-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-thinitalic-webfont.woff')format("woff");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap
 }
-
 @font-face {
-    font-family: 'Grot10';
-    src: url('../fonts/Grot10-RegularItalic-webfont-tth.woff2') format('woff2'),
-    url('../fonts/Grot10-RegularItalic-webfont-tth.woff') format('woff');
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-thin-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-thin-webfont.woff')format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-lightitalic-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-lightitalic-webfont.woff')format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-light-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-light-webfont.woff')format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-regularitalic-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-regularitalic-webfont.woff')format("woff");
     font-weight: 400;
     font-style: italic;
-    font-display: swap;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-regular-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-regular-webfont.woff')format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-mediumitalic-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-mediumitalic-webfont.woff')format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-medium-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-medium-webfont.woff')format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-semibolditalic-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-semibolditalic-webfont.woff')format("woff");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-semibold-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-semibold-webfont.woff')format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-bolditalic-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-bolditalic-webfont.woff')format("woff");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-bold-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-bold-webfont.woff')format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/inquirerheadline-blackitalic-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-blackitalic-webfont.woff')format("woff");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Headline;
+    src: url('../fonts/InquirerHeadline-Black-webfont.woff')format("woff2"),url('../fonts/InquirerHeadline-Black-webfont.woff')format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Text WEB;
+    src: url('../fonts/InquirerTextWEB-RegularItalic-webfont.woff2')format("woff2"),url('../fonts/InquirerTextWEB-RegularItalic-webfont.woff')format("woff");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Text WEB;
+    src: url('../fonts/InquirerTextWEB-Regular-webfont.woff2')format("woff2"),url('/fonts/InquirerTextWEB-Regular-webfont.woff')format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Text WEB;
+    src: url('../fonts/InquirerTextWEB-MediumItalic-webfont.woff2')format("woff2"),url('../fonts/InquirerTextWEB-MediumItalic-webfont.woff')format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Text WEB;
+    src: url('../fonts/InquirerTextWEB-Medium-webfont.woff2')format("woff2"),url('../fonts/InquirerTextWEB-Medium-webfont.woff')format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Text WEB;
+    src: url('../fonts/InquirerTextWEB-BoldItalic-webfont.woff2')format("woff2"),url('../fonts/InquirerTextWEB-BoldItalic-webfont.woff')format("woff");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Inquirer Text WEB;
+    src: url('../fonts/InquirerTextWEB-Bold-webfont.woff2')format("woff2"),url('../fonts/InquirerTextWEB-Bold-webfont.woff')format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Grot10;
+    src: url('../fonts/Grot10-RegularItalic-webfont-tth.woff2')format("woff2"),url('../fonts/Grot10-RegularItalic-webfont-tth.woff')format("woff");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Grot10;
+    src: url('../fonts/Grot10-Regular-webfont-tth.woff2')format("woff2"),url('../fonts/Grot10-Regular-webfont-tth.woff')format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Grot10;
+    src: url('../fonts/Grot10-MediumItalic-webfont-tth.woff2')format("woff2"),url('../fonts/Grot10-MediumItalic-webfont-tth.woff')format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Grot10;
+    src: url('../fonts/Grot10-Medium-webfont-tth.woff2')format("woff2"),url('../fonts/Grot10-Medium-webfont-tth.woff')format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Grot10;
+    src: url('../fonts/Grot10-ExtraBoldItalic-webfont-tth.woff2')format("woff2"),url('../fonts/Grot10-ExtraBoldItalic-webfont-tth.woff')format("woff");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Grot10;
+    src: url('../fonts/Grot10-ExtraBold-webfont-tth.woff2')format("woff2"),url('../fonts/Grot10-ExtraBold-webfont-tth.woff')format("woff");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Grot12 Condensed;
+    src: url('../fonts/Grot12Condensed-LightItalic-webfont.woff2')format("woff2"),url('../fonts/Grot12Condensed-LightItalic-webfont.woff')format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Grot12 Condensed;
+    src: url('../fonts/Grot12Condensed-Light-webfont.woff2')format("woff2"),url('../fonts/Grot12Condensed-Light-webfont.woff')format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Grot12 Condensed;
+    src: url('../fonts/Grot12Condensed-SemiBoldItalic-webfont.woff2')format("woff2"),url('../fonts/Grot12Condensed-SemiBoldItalic-webfont.woff')format("woff");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Grot12 Condensed;
+    src: url('../fonts/Grot12Condensed-SemiBold-webfont.woff2')format("woff2"),url('../fonts/Grot12Condensed-SemiBold-webfont.woff')format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Arial Narrow;
+    size-adjust:91.4%;src: local(Arial Narrow),local(Arial Condensed)
+}
+@font-face {
+    font-family: Rockwell;
+    src: local(Rockwell);
+    size-adjust:80%;descent-override:68%}
+@font-face {
+    font-family: Noto Headline;
+    src: local(NotoSerif);
+    size-adjust:74.2%}
+@font-face {
+    font-family: Georgia Headline;
+    src: local(Georgia);
+    size-adjust:86.79%}
+@font-face {
+    font-family: Times Headline;
+    src: local(Times);
+    size-adjust:87.5%;line-gap-override:26%}
+@font-face {
+    font-family: Times Text;
+    size-adjust:88%;descent-override:43%;src: local(Times),local(Times New Roman)
+}
+@font-face {
+    font-family: Noto Text;
+    src: local(NotoSerif);
+    size-adjust:84%;descent-override:45%}
+@font-face {
+    font-family: Georgia Text;
+    src: local(Georgia);
+    size-adjust:91%;descent-override:60%}
+@font-face {
+    font-family: Ringside Regular SSm;
+    src: url('../fonts/RingsideRegularSSm-BookItalic_Web.woff2')format("woff2"),url('../fonts/RingsideRegularSSm-BookItalic_Web.woff')format("woff");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Ringside Regular SSm;
+    src: url('../fonts/RingsideRegularSSm-Book_Web.woff2')format("woff2"),url('../fonts/RingsideRegularSSm-Book_Web.woff')format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Ringside Regular SSm;
+    src: url('../fonts/RingsideRegularSSm-BoldItalic_Web.woff2')format("woff2"),url('../fonts/RingsideRegularSSm-BoldItalic_Web.woff')format("woff");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap
+}
+@font-face {
+    font-family: Ringside Regular SSm;
+    src: url('../fonts/RingsideRegularSSm-Bold_Web.woff2')format("woff2"),url('../fonts/RingsideRegularSSm-Bold_Web.woff')format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Ringside Condensed;
+    src: url('../fonts/RingsideCondensed-Semibold_Web.woff2')format("woff2"),url('/fonts/RingsideCondensed-Semibold_Web.woff')format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Knockout;
+    src: url('../fonts/Knockout-93_Web.woff2')format("woff2"),url('../fonts/Knockout-93_Web.woff')format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: GT Alpina Extended;
+    src: url('../fonts/GT-Alpina-Extended-Light.woff2')format("woff2"),url('../fonts/GT-Alpina-Extended-Light.woff')format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Tungsten;
+    src: url('../fonts/Tungsten-Semibold_Web.woff2')format("woff2"),url('../fonts/Tungsten-Semibold_Web.woff')format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap
+}
+@font-face {
+    font-family: Space Grotesk;
+    src: url('../fonts/SpaceGrotesk-Regular.woff2')format("woff2"),url('../fonts/SpaceGrotesk-Regular.woff')format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
 }
 
-/* 2. RESET E STILI BASE */
+
+/* stili base */
 body {
-    font-family: 'Grot10', sans-serif;
+    font-family: 'Grot10', Arial, sans-serif;
     margin: 0;
 }
 
@@ -32,7 +322,7 @@ body {
     background-color: #ececec !important;
 }
 
-/* 3. UTILITY CLASSES (Stile Tailwind) */
+/* 3. utility */
 .flex { display: flex; }
 .flex-row { flex-direction: row; }
 .flex-col { flex-direction: column; }
@@ -41,7 +331,6 @@ body {
 .justify-center { justify-content: center; }
 .justify-end { justify-content: flex-end; }
 .hidden { display: none; }
-
 .font-grot10 { font-family: 'Grot10', sans-serif; }
 .text-3 { font-size: 0.75rem; }
 .leading-3\.5 { line-height: 0.875rem; }
@@ -49,29 +338,44 @@ body {
 
 
 .global-app-bar {
-    /* Font e Tipografia (Non inclusi di default in BS) */
+    /* font e tipografia (non inclusi di default in bs) */
     font-family: Grot10, Arial, sans-serif;
     font-weight: 300;
     line-height: 1.125rem;
     font-size: 1rem;
-
-    /* Z-index specifico (BS usa 1020 per sticky-top, ma se vuoi esattamente 11:) */
     z-index: 11 !important;
-
-    /* Reset box-sizing (Bootstrap lo fa già globalmente, ma per sicurezza:) */
     box-sizing: border-box;
 }
 
+/* nascondi il mega menu di base! */
+.custom-mega-nav {
+    display: none;
+}
+/* classe che lo rende visibile */
+.custom-mega-nav.is-visible {
+    display: block !important;
+}
+/* nascondi la search di base */
+.app-search-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* classe che apre la search bar */
+.app-search-dropdown.is-open {
+    max-height: 200px; /* regola in base all'altezza del contenuto */
+}
+
 .app-bar-wrapper {
-    /* Larghezza massima specifica */
+    /* larghezza massima specifica */
     max-width: 1240px;
     width: 100%;
 
-    /* Altezza fissa per Mobile */
+    /* altezza fissa per Mobile */
     height: 62px;
 }
 
-/* Altezza fissa per Desktop (Breakpoint LG di Bootstrap) */
 @media (min-width: 992px) {
     .app-bar-wrapper {
         height: 127px;
@@ -80,21 +384,21 @@ body {
 .static {
     position: static;
 }
-/* Gestione del pannello a comparsa */
+/* pannello a comparsa */
 .app-search-dropdown {
     left: 0;
-    top: 4rem; /* top-16 (16 * 0.25rem) */
-    height: 0; /* Nasconde il menu inizialmente */
-    transition: all 0.2s ease-in-out; /* duration-200 */
+    top: 4rem;
+    height: 0;
+    transition: all 0.2s ease-in-out;
     z-index: 1000;
 }
 
-/* Quando il menu è aperto (aggiungi questa classe via JS) */
+/* quando il menu è aperto */
 .app-search-dropdown.is-open {
     height: auto; /* O un'altezza specifica se preferisci l'animazione */
 }
 
-/* Stili specifici per Desktop */
+/* desktop */
 @media (min-width: 992px) {
     .app-search-dropdown {
         width: 616px !important;
@@ -103,80 +407,58 @@ body {
     }
 }
 
-/* Stile Input personalizzato per ricalcare Tailwind */
 .search-input {
     font-family: 'Grot10', Arial, sans-serif;
     border: 1px solid #6c757d; /* border-neutral-dark-gray */
-    border-radius: 0; /* Rimuove il raggio BS se vuoi l'aspetto squadrato */
+    border-radius: 0;
 }
 
 .search-input:focus {
     border-color: #007bff; /* primary-blue */
     box-shadow: none;
 }
-/* Utility per le dimensioni delle linee dell'hamburger */
-.h-0-5 { height: 2px; } /* Approssimazione di h-0.5 */
+
+.h-0-5 { height: 2px; }
 .h-3 { height: 12px; }
 .w-4 { width: 16px; }
 
-/* Gestione Hover (Equivalente di group-hover) */
 .group:hover .group-hover-opacity-50 {
     opacity: 0.5 !important;
 }
-
-/* Assicuriamoci che i bottoni non abbiano bordi di default di BS */
 .border-0 {
     border: none !important;
 }
-
 .cursor-pointer {
     cursor: pointer;
 }
-/* Sostituisci il vecchio CSS con questo pulito */
-
-/* Per emulare .text-3 (0.75rem) */
 .custom-text-3 {
     font-size: .75rem;
 }
-
-/* Per emulare .leading-3.5 (0.875rem) */
 .custom-leading-3-5 {
     line-height: .875rem;
 }
-
-/* 1. Transizioni personalizzate (Tailwind le ha di serie, Bootstrap no) */
 .transition-all {
     transition-property: all;
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-    transition-duration: 0.5s; /* Unificato a 500ms come nel tuo originale */
+    transition-duration: 0.5s;
 }
-
-/* 2. Gestione Responsiva delle larghezze del Logo */
-/* Sostituisce .w-[140px], .sm:w-[325px], .lg:w-[500px] */
-
-/* Mobile (default) */
 .custom-logo-wrapper {
     width: 140px;
-    height: 60px; /* Altezza indicativa per mantenere lo spazio */
+    height: 60px;
 }
-
-/* Tablet / Small Desktop (Bootstrap SM: 576px) */
-/* Nota: ho usato 576px per standard Bootstrap, ma puoi rimettere 480px se preferisci */
 @media (min-width: 576px) {
     .custom-logo-wrapper,
     .custom-logo-desktop {
         width: 325px;
     }
 }
-
-/* Large Desktop (Bootstrap LG: 992px) */
 @media (min-width: 992px) {
     .custom-logo-wrapper,
     .custom-logo-desktop {
         width: 500px;
     }
 }
-/* Font e Tipografia */
+/* font e tipografia */
 .custom-font-grot {
     font-family: Grot10, Arial, sans-serif;
 }
@@ -186,11 +468,11 @@ body {
 .custom-leading-3-5 { line-height: .875rem; }
 .custom-leading-4 { line-height: 1rem; }
 
-/* Utility di stato */
+/* utility di stato */
 .cursor-pointer { cursor: pointer; }
 .transition-all { transition: all 0.3s ease-in-out; }
 
-/* Stile specifico per il bottone giallo */
+/* stile specifico per il bottone giallo */
 .custom-btn-subscribe {
     border: 1px solid;
     min-width: 160px; /* Assicura che il testo "Special offer" ci stia comodamente */
@@ -204,51 +486,48 @@ body {
 .custom-btn-subscribe b {
     letter-spacing: 0.05em;
 }
-/* Gestione dell'altezza custom (13 in Tailwind = 3.25rem = 52px) */
+/* gestione dell'altezza customizzata*/
 .custom-h-lg-13 {
     transition: all 0.25s ease-in-out;
 }
-
 @media (min-width: 992px) {
     .custom-h-lg-13 {
         height: 3.25rem !important; /* Corrisponde a h-13 */
     }
 }
-
-/* Definizione della transizione (duration-250) */
+/* definizione della transizione (duration-250) */
 .transition-all {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
 }
-/* Famiglia cursor */
+/* cursor */
 .cursor-pointer { cursor: pointer; }
 
-/* Stile delle barre del menu hamburger */
+/*  barre del menu hamburger */
 .custom-bar {
-    height: 2px; /* h-0.5 */
-    width: 1rem; /* w-4 */
-    border-radius: 50rem; /* rounded-full */
+    height: 2px;
+    width: 1rem;
+    border-radius: 50rem;
     transition: opacity 0.3s ease;
 }
 
-/* Effetto Hover (Simula group-hover:opacity-50) */
 .custom-hamburger-group:hover .custom-bar {
     opacity: 0.5;
 }
 
-/* Rimuove l'outline dei bottoni di default */
+/* rimuove l'outline dei bottoni di default */
 .btn:focus, button:focus {
     box-shadow: none;
     outline: none;
 }
-/* Altezza fissa e transizione (Sostituisce h-4, transition-all, duration-500) */
+/* altezza fissa e transizione*/
 .custom-nav-height {
     height: 1rem; /* 16px */
     transition: all 0.5s cubic-bezier(.4, 0, .2, 1);
 }
 
-/* Dimensione font (Sostituisce text-3) */
+/* dimensione font*/
 .custom-text-3 {
     font-size: 0.75rem;
 }
@@ -258,14 +537,99 @@ body {
     cursor: pointer;
 }
 
-/* Nota sui margini:
-   In Bootstrap mx-3 è 1rem (16px).
-   Se vuoi esattamente 1.25rem (20px) come il tuo originale mx-5 di Tailwind,
-   puoi aggiungere questa classe: */
 .mx-3 {
     margin-left: 1.25rem !important;
     margin-right: 1.25rem !important;
 }
 .me-3 {
     margin-right: 1.25rem !important;
+}
+.shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+/* griglie */
+@media (min-width: 576px) {
+    .sm-grid { display: grid !important; }
+    .sm-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (min-width: 992px) {
+    .lg-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+
+.custom-font-condensed {
+    font-family: "Grot12 Condensed", "Arial Narrow", sans-serif;
+}
+
+.custom-text-4 {
+    font-size: 1rem;
+    line-height: 1.125rem;
+}
+
+.custom-text-4-5 {
+    font-size: 1.125rem;
+    line-height: 1;
+}
+.font-semibold {
+    font-weight: 600;
+}
+
+/* transizioni e animazioni */
+.custom-mega-nav {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .2s;
+}
+
+/* x ccolore e hover ex tailwind */
+.text-primary {
+    color: rgba(34, 34, 34, 1) !important;
+}
+
+.hover-underline:hover {
+    text-decoration: underline !important;
+}
+
+/* dimensioni fisse (Sostituiscono le classi Tailwind specifiche) --- */
+@media (min-width: 576px) {
+    .sm-max-w-220 {
+        max-width: 220px !important;
+    }
+}
+/* classe che richiama il font */
+.custom-font-grot {
+    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif !important;
+}
+
+/* la dimensione 4.5 che non esiste in Bootstrap standard */
+.custom-text-4-5 {
+    font-size: 1.125rem !important;
+    line-height: 1 !important;
+}
+
+/* utility per il grassetto se Bootstrap fw-semibold non basta */
+.fw-semibold {
+    font-weight: 600 !important;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+.font-grot12-condensed {
+    font-family: Grot12 Condensed, Arial Narrow, sans-serif;
+}
+
+@media (min-width: 576px) {
+    .sm-grid-cols-2 {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 992px) {
+    .lg-grid-cols-3 {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
