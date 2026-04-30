@@ -1,10 +1,271 @@
+/* 1. CONFIGURAZIONE FONT (Unificata) */
+@font-face {
+    font-family: 'Grot10';
+    src: url('../fonts/Grot10-Regular-webfont-tth.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Grot10';
+    src: url('../fonts/Grot10-RegularItalic-webfont-tth.woff2') format('woff2'),
+    url('../fonts/Grot10-RegularItalic-webfont-tth.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* 2. RESET E STILI BASE */
+body {
+    font-family: 'Grot10', sans-serif;
+    margin: 0;
+}
+
 .container-max {
     width: 100%;
     max-width: 1240px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 auto;
 }
 
 .bg-custom-gray {
     background-color: #ececec !important;
+}
+
+/* 3. UTILITY CLASSES (Stile Tailwind) */
+.flex { display: flex; }
+.flex-row { flex-direction: row; }
+.flex-col { flex-direction: column; }
+.flex-1 { flex: 1 1 0%; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.hidden { display: none; }
+
+.font-grot10 { font-family: 'Grot10', sans-serif; }
+.text-3 { font-size: 0.75rem; }
+.leading-3\.5 { line-height: 0.875rem; }
+.leading-tight { line-height: 1.1; }
+
+
+.global-app-bar {
+    /* Font e Tipografia (Non inclusi di default in BS) */
+    font-family: Grot10, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.125rem;
+    font-size: 1rem;
+
+    /* Z-index specifico (BS usa 1020 per sticky-top, ma se vuoi esattamente 11:) */
+    z-index: 11 !important;
+
+    /* Reset box-sizing (Bootstrap lo fa già globalmente, ma per sicurezza:) */
+    box-sizing: border-box;
+}
+
+.app-bar-wrapper {
+    /* Larghezza massima specifica */
+    max-width: 1240px;
+    width: 100%;
+
+    /* Altezza fissa per Mobile */
+    height: 62px;
+}
+
+/* Altezza fissa per Desktop (Breakpoint LG di Bootstrap) */
+@media (min-width: 992px) {
+    .app-bar-wrapper {
+        height: 127px;
+    }
+}
+.static {
+    position: static;
+}
+/* Gestione del pannello a comparsa */
+.app-search-dropdown {
+    left: 0;
+    top: 4rem; /* top-16 (16 * 0.25rem) */
+    height: 0; /* Nasconde il menu inizialmente */
+    transition: all 0.2s ease-in-out; /* duration-200 */
+    z-index: 1000;
+}
+
+/* Quando il menu è aperto (aggiungi questa classe via JS) */
+.app-search-dropdown.is-open {
+    height: auto; /* O un'altezza specifica se preferisci l'animazione */
+}
+
+/* Stili specifici per Desktop */
+@media (min-width: 992px) {
+    .app-search-dropdown {
+        width: 616px !important;
+        left: 2rem !important; /* lg:left-8 */
+        top: 8rem !important;  /* lg:top-32 */
+    }
+}
+
+/* Stile Input personalizzato per ricalcare Tailwind */
+.search-input {
+    font-family: 'Grot10', Arial, sans-serif;
+    border: 1px solid #6c757d; /* border-neutral-dark-gray */
+    border-radius: 0; /* Rimuove il raggio BS se vuoi l'aspetto squadrato */
+}
+
+.search-input:focus {
+    border-color: #007bff; /* primary-blue */
+    box-shadow: none;
+}
+/* Utility per le dimensioni delle linee dell'hamburger */
+.h-0-5 { height: 2px; } /* Approssimazione di h-0.5 */
+.h-3 { height: 12px; }
+.w-4 { width: 16px; }
+
+/* Gestione Hover (Equivalente di group-hover) */
+.group:hover .group-hover-opacity-50 {
+    opacity: 0.5 !important;
+}
+
+/* Assicuriamoci che i bottoni non abbiano bordi di default di BS */
+.border-0 {
+    border: none !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+/* Sostituisci il vecchio CSS con questo pulito */
+
+/* Per emulare .text-3 (0.75rem) */
+.custom-text-3 {
+    font-size: .75rem;
+}
+
+/* Per emulare .leading-3.5 (0.875rem) */
+.custom-leading-3-5 {
+    line-height: .875rem;
+}
+
+/* 1. Transizioni personalizzate (Tailwind le ha di serie, Bootstrap no) */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: 0.5s; /* Unificato a 500ms come nel tuo originale */
+}
+
+/* 2. Gestione Responsiva delle larghezze del Logo */
+/* Sostituisce .w-[140px], .sm:w-[325px], .lg:w-[500px] */
+
+/* Mobile (default) */
+.custom-logo-wrapper {
+    width: 140px;
+    height: 60px; /* Altezza indicativa per mantenere lo spazio */
+}
+
+/* Tablet / Small Desktop (Bootstrap SM: 576px) */
+/* Nota: ho usato 576px per standard Bootstrap, ma puoi rimettere 480px se preferisci */
+@media (min-width: 576px) {
+    .custom-logo-wrapper,
+    .custom-logo-desktop {
+        width: 325px;
+    }
+}
+
+/* Large Desktop (Bootstrap LG: 992px) */
+@media (min-width: 992px) {
+    .custom-logo-wrapper,
+    .custom-logo-desktop {
+        width: 500px;
+    }
+}
+/* Font e Tipografia */
+.custom-font-grot {
+    font-family: Grot10, Arial, sans-serif;
+}
+
+.custom-text-3 { font-size: .75rem; }
+.custom-text-3-5 { font-size: .875rem; }
+.custom-leading-3-5 { line-height: .875rem; }
+.custom-leading-4 { line-height: 1rem; }
+
+/* Utility di stato */
+.cursor-pointer { cursor: pointer; }
+.transition-all { transition: all 0.3s ease-in-out; }
+
+/* Stile specifico per il bottone giallo */
+.custom-btn-subscribe {
+    border: 1px solid;
+    min-width: 160px; /* Assicura che il testo "Special offer" ci stia comodamente */
+}
+
+.custom-btn-subscribe:hover {
+    filter: brightness(0.92); /* Effetto al passaggio del mouse */
+    transform: translateY(-1px);
+}
+
+.custom-btn-subscribe b {
+    letter-spacing: 0.05em;
+}
+/* Gestione dell'altezza custom (13 in Tailwind = 3.25rem = 52px) */
+.custom-h-lg-13 {
+    transition: all 0.25s ease-in-out;
+}
+
+@media (min-width: 992px) {
+    .custom-h-lg-13 {
+        height: 3.25rem !important; /* Corrisponde a h-13 */
+    }
+}
+
+/* Definizione della transizione (duration-250) */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+}
+/* Famiglia cursor */
+.cursor-pointer { cursor: pointer; }
+
+/* Stile delle barre del menu hamburger */
+.custom-bar {
+    height: 2px; /* h-0.5 */
+    width: 1rem; /* w-4 */
+    border-radius: 50rem; /* rounded-full */
+    transition: opacity 0.3s ease;
+}
+
+/* Effetto Hover (Simula group-hover:opacity-50) */
+.custom-hamburger-group:hover .custom-bar {
+    opacity: 0.5;
+}
+
+/* Rimuove l'outline dei bottoni di default */
+.btn:focus, button:focus {
+    box-shadow: none;
+    outline: none;
+}
+/* Altezza fissa e transizione (Sostituisce h-4, transition-all, duration-500) */
+.custom-nav-height {
+    height: 1rem; /* 16px */
+    transition: all 0.5s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* Dimensione font (Sostituisce text-3) */
+.custom-text-3 {
+    font-size: 0.75rem;
+}
+
+/* Utility cursore */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Nota sui margini:
+   In Bootstrap mx-3 è 1rem (16px).
+   Se vuoi esattamente 1.25rem (20px) come il tuo originale mx-5 di Tailwind,
+   puoi aggiungere questa classe: */
+.mx-3 {
+    margin-left: 1.25rem !important;
+    margin-right: 1.25rem !important;
+}
+.me-3 {
+    margin-right: 1.25rem !important;
 }
