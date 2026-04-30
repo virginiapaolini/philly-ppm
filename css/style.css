@@ -608,7 +608,7 @@ body {
     line-height: 1 !important;
 }
 
-/* utility per il grassetto se Bootstrap fw-semibold non basta */
+/* utility per il grassetto se bs fw-semibold non basta */
 .fw-semibold {
     font-weight: 600 !important;
 }
@@ -632,4 +632,21 @@ body {
         display: grid !important;
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+}
+.nav-link:hover {
+    text-decoration: underline !important;
+}
+.nav-link {
+    font-size: 0.9rem; /* Simile a text-4 (14-16px) */
+    font-weight: 500;
+}
+/* per i titoli (GET IN TOUCH, NEWS, ecc) */
+.footer-title {
+    font-size: 1.125rem !important;
+}
+
+/* per i link del footer */
+.footer-link {
+    font-size: 1rem !important;
+    line-height: 1;
 }
