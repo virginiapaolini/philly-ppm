@@ -322,7 +322,7 @@ body {
     background-color: #ececec !important;
 }
 
-/* 3. utility */
+/* utility */
 .flex { display: flex; }
 .flex-row { flex-direction: row; }
 .flex-col { flex-direction: column; }
@@ -334,7 +334,6 @@ body {
 .font-grot10 { font-family: 'Grot10', sans-serif; }
 .text-3 { font-size: 0.75rem; }
 .leading-3\.5 { line-height: 0.875rem; }
-.leading-tight { line-height: 1.1; }
 
 
 .global-app-bar {
@@ -655,7 +654,6 @@ body {
     font-weight: 700;
     font-size: 1.25rem;
     text-transform: uppercase;
-    border-bottom: 1px solid #000;
     margin-bottom: 1rem;
     display: block;
 }
@@ -679,19 +677,11 @@ body {
     }
 }
 
-/* --- CONFIGURAZIONE FONT --- */
-@font-face {
-    font-family: 'Inquirer Headline';
-    src: url('https://media.inquirer.com/fonts/inquirerheadline-thinitalic-webfont.woff2') format('woff2');
-    font-weight: 100;
-    font-style: italic;
-    font-display: swap;
-}
 :root {
-    --inq-text-main: rgba(34, 34, 34, 1);       /* .text-neutral-text-color */
-    --inq-text-light: rgba(89, 87, 96, 1);      /* .text-neutral-light-text */
-    --inq-blue-bullet: #1a6aff;                 /* .fill-blue-mid */
-    --inq-transition: cubic-bezier(0, 0, .2, 1); /* .ease-out */
+    --inq-text-main: rgba(34, 34, 34, 1);
+    --inq-text-light: rgba(89, 87, 96, 1);
+    --inq-blue-bullet: #1a6aff;
+    --inq-transition: cubic-bezier(0, 0, .2, 1);
 }
 /* titolo principale!!! */
 .inq-card-title {
@@ -699,6 +689,7 @@ body {
     font-weight: 600;
     line-height: 1;
     transition: all 0.3s var(--inq-transition);
+    color: #000;
 }
 .inq-card-title:hover {
     color: #004b8d;
@@ -745,7 +736,7 @@ body {
 }
 
 .inq-headline-sm:hover {
-    color: #1a6aff !important; /* Il blu dell'hover originale */
+    color: #1a6aff !important; /* il blu dell'hover originale */
 }
 
 /* stile del testo del sommario */
@@ -797,13 +788,6 @@ body {
 hr {
     border-top: 1px solid #e0e0e0;
     opacity: 1;
-}
-
-.inq-related-link {
-    font-family: 'Inquirer Text WEB', serif;
-    font-size: 0.9rem;
-    color: #222;
-    text-decoration: none;
 }
 
 .inq-related-link:hover {
@@ -940,6 +924,11 @@ hr {
 .inq-latest-link:hover {
     color: #1a6aff;
 }
+.inq-section-header {
+    border-top: 2px solid #000 !important;
+    padding-top: 12px;
+    margin-bottom: 24px;
+}
 .small-title {
     font-family: 'Inquirer Headline', serif;
     font-size: 1.6rem;
@@ -958,4 +947,87 @@ hr {
     .border-bottom-mobile {
         border-bottom: 1px solid #dee2e6 !important;
     }
+}
+/*most read*/
+.most-read-header {
+    border-top: 2px solid #000;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+}
+
+.inq-headline-most-read:hover {
+    color: #444;
+}
+
+.inq-figure-3x2 {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.inq-figure-3x2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.most-read-container .col-md-3 {
+    margin-bottom: 2rem;
+}
+/*sports*/
+
+.font-inquirer-headline {
+    font-family: 'Inquirer Headline', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.type-section-header-2 {
+    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.border-neutral-black { border-color: #000000 !important; }
+.inq-section-header {
+    border-top: 2px solid #000;
+}
+
+.more-link {
+    font-weight: 800;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid transparent;
+}
+
+.more-link:hover {
+    border-bottom: 1px solid #000;
+}
+
+/* griglia!*/
+.inq-grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .inq-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .item-hero {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+.aspect-3-2 {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    width: 100%;
 }
