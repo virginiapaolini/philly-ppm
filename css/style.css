@@ -940,3 +940,22 @@ hr {
 .inq-latest-link:hover {
     color: #1a6aff;
 }
+.small-title {
+    font-family: 'Inquirer Headline', serif;
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+/* linea verticale divisoria solo su schermi grandi */
+@media (min-width: 768px) {
+    .border-end-md {
+        border-right: 1px solid #dee2e6 !important;
+    }
+}
+
+/* rimuove o aggiunge bordi in base al dispositivo */
+@media (max-width: 767px) {
+    .border-bottom-mobile {
+        border-bottom: 1px solid #dee2e6 !important;
+    }
+}
