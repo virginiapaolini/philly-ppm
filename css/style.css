@@ -371,7 +371,6 @@ body {
     /* larghezza massima specifica */
     max-width: 1240px;
     width: 100%;
-
     /* altezza fissa per Mobile */
     height: 62px;
 }
@@ -575,7 +574,7 @@ body {
     font-weight: 600;
 }
 
-/* transizioni e animazioni */
+/* transizioni */
 .custom-mega-nav {
     transition-property: all;
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
@@ -649,4 +648,295 @@ body {
 .footer-link {
     font-size: 1rem !important;
     line-height: 1;
+}
+
+.type-section-header-2 {
+    font-family: 'Helvetica Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000;
+    margin-bottom: 1rem;
+    display: block;
+}
+.custom-inq-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* mobile */
+    gap: 1.25rem;
+}
+
+@media (min-width: 576px) {
+    .custom-inq-grid {
+        grid-template-columns: repeat(2, 1fr); /* tablet */
+    }
+}
+
+@media (min-width: 1024px) {
+    .custom-inq-grid {
+        /* proporzioni esatte richieste dall'Inquirer */
+        grid-template-columns: 42fr 33fr 25fr;
+        gap: 1.5rem;
+    }
+}
+
+/* --- CONFIGURAZIONE FONT --- */
+@font-face {
+    font-family: 'Inquirer Headline';
+    src: url('https://media.inquirer.com/fonts/inquirerheadline-thinitalic-webfont.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+:root {
+    --inq-text-main: rgba(34, 34, 34, 1);       /* .text-neutral-text-color */
+    --inq-text-light: rgba(89, 87, 96, 1);      /* .text-neutral-light-text */
+    --inq-blue-bullet: #1a6aff;                 /* .fill-blue-mid */
+    --inq-transition: cubic-bezier(0, 0, .2, 1); /* .ease-out */
+}
+/* titolo principale!!! */
+.inq-card-title {
+    font-family: 'Inquirer Headline', serif;
+    font-weight: 600;
+    line-height: 1;
+    transition: all 0.3s var(--inq-transition);
+}
+.inq-card-title:hover {
+    color: #004b8d;
+}
+/* testo */
+.inq-card-summary {
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+    color: var(--inq-text-light);
+    line-height: 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* sottonotizie */
+.inq-related-link {
+    font-family: 'Inquirer Text WEB', serif;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--inq-text-main);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+.inq-bullet-fixed {
+    width: 12px !important;
+    height: 12px !important;
+    min-width: 12px;
+    fill: #1a6aff !important;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+/* per gestire le  immgaini 3:2 */
+.aspect-3-2 {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* stile del titolo per la seconda notizia (leggermente più piccolo della principale) */
+.inq-headline-sm {
+    font-family: 'Inquirer Headline', 'Arial Narrow', sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.1;
+    transition: color 0.3s cubic-bezier(0, 0, .2, 1);
+}
+
+.inq-headline-sm:hover {
+    color: #1a6aff !important; /* Il blu dell'hover originale */
+}
+
+/* stile del testo del sommario */
+.inq-text-web {
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: rgba(89, 87, 96, 1) !important; /* colore og */
+}
+
+/* linea di separazione tra notizie */
+.border-top {
+    border-top: 1px solid #ddd !important;
+    opacity: 1;
+}
+
+/* titoli std */
+.inq-title-standard {
+    font-family: 'Inquirer Headline', 'Arial Narrow', sans-serif !important;
+    font-weight: 600 !important; /* Forza lo stesso peso per tutti */
+    font-size: 1.6rem !important; /* Dimensione text-2.5xl */
+    line-height: 1.05;
+    color: #000;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    transition: color 0.2s ease-in-out;
+}
+
+.inq-title-standard:hover {
+    color: #1a6aff !important;
+}
+
+/* corpo */
+.inq-text-web-small {
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    font-weight: 400;
+    color: #595760;
+}
+
+/* IMMAGINE 3:2 */
+.inq-aspect-3-2 {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+hr {
+    border-top: 1px solid #e0e0e0;
+    opacity: 1;
+}
+
+.inq-related-link {
+    font-family: 'Inquirer Text WEB', serif;
+    font-size: 0.9rem;
+    color: #222;
+    text-decoration: none;
+}
+
+.inq-related-link:hover {
+    color: #1a6aff;
+}
+
+/* titolo std */
+.inq-headline-standard {
+    font-family: 'Inquirer Headline', 'Arial Narrow', sans-serif !important;
+    font-size: 1.65rem !important;
+    line-height: 1.1;
+    color: #000;
+    transition: color 0.3s ease-out;
+}
+
+.inq-headline-standard:hover {
+    color: #1a6aff !important;
+}
+
+/* testo sommario*/
+.inq-text-body {
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: #595760;
+}
+
+/* img con ar Inquirer */
+.inq-aspect-3-2 {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+/*the latest!!!*/
+
+.inq-section-header {
+    border-top: 3px solid #000;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 0;
+}
+
+.headline-title-text {
+    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* el lista */
+.inq-headline-item-custom {
+    border-top: 1px solid #c4c4c4;
+    padding: 8px 0;
+    display: block; /* il contenitore è block, ma il contenuto interno sarà inline */
+}
+
+.inq-headline-item-custom:first-child {
+    border-top: 0 !important;
+}
+
+.inq-eyebrow-container {
+    display: inline; /*  per non mandare a capo il titolo */
+}
+
+.inq-eyebrow--text {
+    position: relative;
+    display: inline-block;
+    padding-right: 4px; /* spazio tra la fine dell'eyebrow e il titolo */
+    z-index: 1;
+}
+
+/* rettangolino rosso sotto "Opinion" */
+.inq-eyebrow--text:after {
+    content: "";
+    background-color: #e11b22;
+    height: 8px; /* spessore del rettangolo */
+    position: absolute;
+    bottom: 2px; /*  verticale rispetto al testo */
+    left: 0;
+    width: 100%;
+    z-index: -1; /* dietro al testo */
+}
+
+.type-opinion-eyebrow {
+    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    line-height: 1rem;
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+
+.inq-item-title {
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: rgba(34, 34, 34, 1);
+    text-decoration: none;
+    display: inline;
+    vertical-align: baseline;
+}
+
+.inq-item-title:hover {
+    color: #1a6aff;
+}
+
+.inq-item-byline {
+    display: inline;
+    margin-left: 4px;
+}
+
+.type-article-details {
+    font-family: 'Grot10', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    font-weight: 300;
+    color: rgba(89, 87, 96, 1);
+    display: inline;
+}
+
+.inq-latest-link {
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.25rem;
+    color: #222222;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.inq-latest-link:hover {
+    color: #1a6aff;
 }
