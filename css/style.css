@@ -429,9 +429,7 @@ body {
 .cursor-pointer {
     cursor: pointer;
 }
-.custom-text-3 {
-    font-size: .75rem;
-}
+
 .custom-leading-3-5 {
     line-height: .875rem;
 }
@@ -461,7 +459,7 @@ body {
     font-family: Grot10, Arial, sans-serif;
 }
 
-.custom-text-3 { font-size: .75rem; }
+.custom-text-3 { font-size: .875rem; }
 .custom-text-3-5 { font-size: .875rem; }
 .custom-leading-3-5 { line-height: .875rem; }
 .custom-leading-4 { line-height: 1rem; }
@@ -523,11 +521,6 @@ body {
 .custom-nav-height {
     height: 1rem; /* 16px */
     transition: all 0.5s cubic-bezier(.4, 0, .2, 1);
-}
-
-/* dimensione font*/
-.custom-text-3 {
-    font-size: 0.75rem;
 }
 
 /* Utility cursore */
@@ -640,7 +633,7 @@ body {
 }
 /* per i titoli (GET IN TOUCH, NEWS, ecc) */
 .footer-title {
-    font-size: 1.125rem !important;
+    font-size: 1.250rem !important;
 }
 
 /* per i link del footer */
@@ -867,10 +860,13 @@ hr {
     background-color: #e11b22;
     height: 8px; /* spessore del rettangolo */
     position: absolute;
-    bottom: 2px; /*  verticale rispetto al testo */
+    bottom: 1px; /*  verticale rispetto al testo */
     left: 0;
     width: 100%;
     z-index: -1; /* dietro al testo */
+}
+.fs-footer-links {
+    font-size: 16px;
 }
 
 .type-opinion-eyebrow {
