@@ -1,4 +1,583 @@
-/* CONFIGURAZIONE FONT */
+/* stili base */
+body {
+    font-family: 'Grot10', Arial, sans-serif;
+    margin: 0;
+}
+
+/* utility */
+.flex-row { flex-direction: row; }
+
+.global-app-bar {
+    /* font e tipografia (non inclusi di default in bs) */
+    font-family: Grot10, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.125rem;
+    font-size: 1rem;
+    z-index: 11 !important;
+    box-sizing: border-box;
+}
+
+/* nascondi la search di base */
+.app-search-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* classe che apre la search bar */
+.app-search-dropdown.is-open {
+    max-height: 200px; /* regola in base all'altezza del contenuto */
+}
+
+.app-bar-wrapper {
+    /* larghezza massima specifica */
+    max-width: 1240px;
+    width: 100%;
+    /* altezza fissa per Mobile */
+    height: 62px;
+}
+
+@media (min-width: 992px) {
+    .app-bar-wrapper {
+        height: 127px;
+    }
+}
+/* pannello a comparsa */
+.app-search-dropdown {
+    left: 0;
+    top: 4rem;
+    height: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 1000;
+}
+
+/* quando il menu è aperto */
+.app-search-dropdown.is-open {
+    height: auto; /* O un'altezza specifica se preferisci l'animazione */
+}
+
+/* desktop */
+@media (min-width: 992px) {
+    .app-search-dropdown {
+        width: 616px !important;
+        left: 2rem !important; /* lg:left-8 */
+        top: 8rem !important;  /* lg:top-32 */
+    }
+}
+
+.search-input {
+    font-family: 'Grot10', Arial, sans-serif;
+    border: 1px solid #6c757d; /* border-neutral-dark-gray */
+    border-radius: 0;
+}
+
+.search-input:focus {
+    border-color: #007bff; /* primary-blue */
+    box-shadow: none;
+}
+
+.h-0-5 { height: 2px; }
+.h-3 { height: 12px; }
+.w-4 { width: 16px; }
+
+.group:hover .group-hover-opacity-50 {
+    opacity: 0.5 !important;
+}
+.border-0 {
+    border: none !important;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.custom-leading-3-5 {
+    line-height: .875rem;
+}
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: 0.5s;
+}
+.custom-logo-wrapper {
+    width: 140px;
+    height: 60px;
+}
+@media (min-width: 576px) {
+    .custom-logo-wrapper,
+    .custom-logo-desktop {
+        width: 325px;
+    }
+}
+@media (min-width: 992px) {
+    .custom-logo-wrapper,
+    .custom-logo-desktop {
+        width: 500px;
+    }
+}
+
+.custom-text-3 { font-size: .875rem; }
+.custom-text-3-5 { font-size: .875rem; }
+.custom-leading-3-5 { line-height: .875rem; }
+.custom-leading-4 { line-height: 1rem; }
+
+/* utility di stato */
+.cursor-pointer { cursor: pointer; }
+.transition-all { transition: all 0.3s ease-in-out; }
+
+/* stile specifico per il bottone giallo */
+.custom-btn-subscribe {
+    border: 1px solid;
+    min-width: 160px; /* Assicura che il testo "Special offer" ci stia comodamente */
+}
+
+.custom-btn-subscribe:hover {
+    filter: brightness(0.92); /* Effetto al passaggio del mouse */
+    transform: translateY(-1px);
+}
+
+.custom-btn-subscribe b {
+    letter-spacing: 0.05em;
+}
+/* gestione dell'altezza customizzata*/
+.custom-h-lg-13 {
+    transition: all 0.25s ease-in-out;
+}
+@media (min-width: 992px) {
+    .custom-h-lg-13 {
+        height: 3.25rem !important; /* Corrisponde a h-13 */
+    }
+}
+/* definizione della transizione (duration-250) */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+}
+/* cursor */
+.cursor-pointer { cursor: pointer; }
+
+/*  barre del menu hamburger */
+.custom-bar {
+    height: 2px;
+    width: 1rem;
+    border-radius: 50rem;
+    transition: opacity 0.3s ease;
+}
+
+.custom-hamburger-group:hover .custom-bar {
+    opacity: 0.5;
+}
+
+/* rimuove l'outline dei bottoni di default */
+.btn:focus, button:focus {
+    box-shadow: none;
+    outline: none;
+}
+/* altezza fissa e transizione*/
+.custom-nav-height {
+    height: 1rem; /* 16px */
+    transition: all 0.5s cubic-bezier(.4, 0, .2, 1);
+}
+
+.mx-3 {
+    margin-left: 1.25rem !important;
+    margin-right: 1.25rem !important;
+}
+.me-3 {
+    margin-right: 1.25rem !important;
+}
+
+/* griglie */
+@media (min-width: 576px) {
+    .sm-grid { display: grid !important; }
+    .sm-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (min-width: 992px) {
+    .lg-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+}
+
+.custom-font-condensed {
+    font-family: "Grot12 Condensed", "Arial Narrow", sans-serif;
+}
+
+.custom-text-4 {
+    font-size: 1rem;
+    line-height: 1.125rem;
+}
+
+.custom-text-4-5 {
+    font-size: 1.125rem;
+    line-height: 1;
+}
+.font-semibold {
+    font-weight: 600;
+}
+
+/* transizioni */
+.custom-mega-nav {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .2s;
+}
+
+/* x ccolore e hover ex tailwind */
+.text-primary {
+    color: rgba(34, 34, 34, 1) !important;
+}
+
+.hover-underline:hover {
+    text-decoration: underline !important;
+}
+
+/* dimensioni fisse (Sostituiscono le classi Tailwind specifiche) --- */
+@media (min-width: 576px) {
+    .sm-max-w-220 {
+        max-width: 220px !important;
+    }
+}
+/* classe che richiama il font */
+.custom-font-grot {
+    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif !important;
+}
+
+/* la dimensione 4.5 che non esiste in Bootstrap standard */
+.custom-text-4-5 {
+    font-size: 1.125rem !important;
+    line-height: 1 !important;
+}
+
+/* utility per il grassetto se bs fw-semibold non basta */
+
+.font-semibold {
+    font-weight: 600;
+}
+.font-grot12-condensed {
+    font-family: Grot12 Condensed, Arial Narrow, sans-serif;
+}
+
+@media (min-width: 576px) {
+    .sm-grid-cols-2 {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 992px) {
+    .lg-grid-cols-3 {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* per i titoli (GET IN TOUCH, NEWS, ecc) */
+.footer-title {
+    font-size: 1.250rem !important;
+}
+
+.type-section-header-2 {
+    font-family: 'Helvetica Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+:root {
+    --inq-text-main: rgba(34, 34, 34, 1);
+    --inq-text-light: rgba(89, 87, 96, 1);
+    --inq-blue-bullet: #1a6aff;
+    --inq-transition: cubic-bezier(0, 0, .2, 1);
+}
+/* titolo principale!!! */
+.inq-card-title {
+    font-family: 'Inquirer Headline', serif;
+    font-weight: 600;
+    line-height: 1;
+    transition: all 0.3s var(--inq-transition);
+    color: #000;
+}
+.inq-card-title:hover {
+    color: #004b8d;
+}
+/* testo */
+.inq-card-summary {
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+    color: var(--inq-text-light);
+    line-height: 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* sottonotizie */
+.inq-related-link {
+    font-family: 'Inquirer Text WEB', serif;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--inq-text-main);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+.inq-bullet-fixed {
+    width: 12px !important;
+    height: 12px !important;
+    min-width: 12px;
+    fill: #1a6aff !important;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+/* per gestire le  immgaini 3:2 */
+.aspect-3-2 {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* stile del titolo per la seconda notizia (leggermente più piccolo della principale) */
+.inq-headline-sm {
+    font-family: 'Inquirer Headline', 'Arial Narrow', sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.1;
+    transition: color 0.3s cubic-bezier(0, 0, .2, 1);
+}
+
+.inq-headline-sm:hover {
+    color: #1a6aff !important; /* il blu dell'hover originale */
+}
+
+/* stile del testo del sommario */
+.inq-text-web {
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: rgba(89, 87, 96, 1) !important; /* colore og */
+}
+
+/* linea di separazione tra notizie */
+.border-top {
+    border-top: 1px solid #ddd !important;
+    opacity: 1;
+}
+
+/* img 3:2 */
+.inq-aspect-3-2 {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+hr {
+    border-top: 1px solid #e0e0e0;
+    opacity: 1;
+}
+
+.inq-related-link:hover {
+    color: #1a6aff;
+}
+
+/* titolo std */
+.inq-headline-standard {
+    font-family: 'Inquirer Headline', 'Arial Narrow', sans-serif !important;
+    font-size: 1.65rem !important;
+    line-height: 1.1;
+    color: #000;
+    transition: color 0.3s ease-out;
+}
+
+.inq-headline-standard:hover {
+    color: #1a6aff !important;
+}
+
+/* testo sommario*/
+.inq-text-body {
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: #595760;
+}
+
+/* img con ar Inquirer */
+.inq-aspect-3-2 {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+/*the latest!!!*/
+.inq-section-header {
+    border-top: 3px solid #000;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 0;
+}
+.headline-title-text {
+    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    color: #000;
+}
+/* el lista */
+.inq-headline-item-custom {
+    border-top: 1px solid #c4c4c4;
+    padding: 8px 0;
+    display: block; /* il contenitore è block, ma il contenuto interno sarà inline */
+}
+
+.inq-headline-item-custom:first-child {
+    border-top: 0 !important;
+}
+.inq-eyebrow-container {
+    display: inline; /*  per non mandare a capo il titolo */
+}
+.inq-eyebrow--text {
+    position: relative;
+    display: inline-block;
+    padding-right: 4px; /* spazio tra la fine dell'eyebrow e il titolo */
+    z-index: 1;
+}
+/* rettangolino rosso sotto "Opinion" */
+.inq-eyebrow--text:after {
+    content: "";
+    background-color: #e11b22;
+    height: 8px; /* spessore del rettangolo */
+    position: absolute;
+    bottom: 1px; /*  verticale rispetto al testo */
+    left: 0;
+    width: 100%;
+    z-index: -1; /* dietro al testo */
+}
+.fs-footer-links {
+    font-size: 16px;
+}
+.type-opinion-eyebrow {
+    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    line-height: 1rem;
+    text-decoration: none !important;
+    color: #000 !important;
+}
+.inq-item-title {
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    color: rgba(34, 34, 34, 1);
+    text-decoration: none;
+    display: inline;
+    vertical-align: baseline;
+}
+.inq-item-title:hover {
+    color: #1a6aff;
+}
+.inq-item-byline {
+    display: inline;
+    margin-left: 4px;
+}
+.type-article-details {
+    font-family: 'Grot10', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    font-weight: 300;
+    color: rgba(89, 87, 96, 1);
+    display: inline;
+}
+.inq-section-header {
+    border-top: 2px solid #000 !important;
+    padding-top: 12px;
+    margin-bottom: 24px;
+}
+.small-title {
+    font-family: 'Inquirer Headline', serif;
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+/* linea verticale divisoria solo su schermi grandi */
+@media (min-width: 768px) {
+    .border-end-md {
+        border-right: 1px solid #dee2e6 !important;
+    }
+}
+/* rimuove o aggiunge bordi in base al dispositivo */
+@media (max-width: 767px) {
+    .border-bottom-mobile {
+        border-bottom: 1px solid #dee2e6 !important;
+    }
+}
+/*most read*/
+.most-read-header {
+    border-top: 2px solid #000;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: 'Inquirer Text WEB', Georgia, serif;
+}
+.inq-headline-most-read:hover {
+    color: #444;
+}
+.inq-figure-3x2 {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+.inq-figure-3x2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.most-read-container .col-md-3 {
+    margin-bottom: 2rem;
+}
+/*sports*/
+
+.font-inquirer-headline {
+    font-family: 'Inquirer Headline', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.type-section-header-2 {
+    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.inq-section-header {
+    border-top: 2px solid #000;
+}
+
+/* griglia!*/
+.inq-grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    .inq-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .item-hero {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+.aspect-3-2 {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    width: 100%;
+}
+.object-fit-cover {
+    object-fit: cover;
+}
+.transition-300 {
+    transition: all 0.3s ease-out;
+}
+article:hover {
+    opacity: 0.9;
+}
+
+/* FONT */
 @font-face {
     font-family: Inquirer Headline;
     src: url('../fonts/inquirerheadline-thinitalic-webfont.woff2')format("woff2"),url('../fonts/inquirerheadline-thinitalic-webfont.woff')format("woff");
@@ -303,736 +882,4 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap
-}
-
-
-/* stili base */
-body {
-    font-family: 'Grot10', Arial, sans-serif;
-    margin: 0;
-}
-
-.container-max {
-    width: 100%;
-    max-width: 1240px;
-    margin: 0 auto;
-}
-
-.bg-custom-gray {
-    background-color: #ececec !important;
-}
-
-/* utility */
-.flex { display: flex; }
-.flex-row { flex-direction: row; }
-.flex-col { flex-direction: column; }
-.flex-1 { flex: 1 1 0%; }
-.items-center { align-items: center; }
-.justify-center { justify-content: center; }
-.justify-end { justify-content: flex-end; }
-.hidden { display: none; }
-.font-grot10 { font-family: 'Grot10', sans-serif; }
-.text-3 { font-size: 0.75rem; }
-.leading-3\.5 { line-height: 0.875rem; }
-
-
-.global-app-bar {
-    /* font e tipografia (non inclusi di default in bs) */
-    font-family: Grot10, Arial, sans-serif;
-    font-weight: 300;
-    line-height: 1.125rem;
-    font-size: 1rem;
-    z-index: 11 !important;
-    box-sizing: border-box;
-}
-
-/* nascondi il mega menu di base! */
-.custom-mega-nav {
-    display: none;
-}
-/* classe che lo rende visibile */
-.custom-mega-nav.is-visible {
-    display: block !important;
-}
-/* nascondi la search di base */
-.app-search-dropdown {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-/* classe che apre la search bar */
-.app-search-dropdown.is-open {
-    max-height: 200px; /* regola in base all'altezza del contenuto */
-}
-
-.app-bar-wrapper {
-    /* larghezza massima specifica */
-    max-width: 1240px;
-    width: 100%;
-    /* altezza fissa per Mobile */
-    height: 62px;
-}
-
-@media (min-width: 992px) {
-    .app-bar-wrapper {
-        height: 127px;
-    }
-}
-.static {
-    position: static;
-}
-/* pannello a comparsa */
-.app-search-dropdown {
-    left: 0;
-    top: 4rem;
-    height: 0;
-    transition: all 0.2s ease-in-out;
-    z-index: 1000;
-}
-
-/* quando il menu è aperto */
-.app-search-dropdown.is-open {
-    height: auto; /* O un'altezza specifica se preferisci l'animazione */
-}
-
-/* desktop */
-@media (min-width: 992px) {
-    .app-search-dropdown {
-        width: 616px !important;
-        left: 2rem !important; /* lg:left-8 */
-        top: 8rem !important;  /* lg:top-32 */
-    }
-}
-
-.search-input {
-    font-family: 'Grot10', Arial, sans-serif;
-    border: 1px solid #6c757d; /* border-neutral-dark-gray */
-    border-radius: 0;
-}
-
-.search-input:focus {
-    border-color: #007bff; /* primary-blue */
-    box-shadow: none;
-}
-
-.h-0-5 { height: 2px; }
-.h-3 { height: 12px; }
-.w-4 { width: 16px; }
-
-.group:hover .group-hover-opacity-50 {
-    opacity: 0.5 !important;
-}
-.border-0 {
-    border: none !important;
-}
-.cursor-pointer {
-    cursor: pointer;
-}
-
-.custom-leading-3-5 {
-    line-height: .875rem;
-}
-.transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-    transition-duration: 0.5s;
-}
-.custom-logo-wrapper {
-    width: 140px;
-    height: 60px;
-}
-@media (min-width: 576px) {
-    .custom-logo-wrapper,
-    .custom-logo-desktop {
-        width: 325px;
-    }
-}
-@media (min-width: 992px) {
-    .custom-logo-wrapper,
-    .custom-logo-desktop {
-        width: 500px;
-    }
-}
-/* font e tipografia */
-.custom-font-grot {
-    font-family: Grot10, Arial, sans-serif;
-}
-
-.custom-text-3 { font-size: .875rem; }
-.custom-text-3-5 { font-size: .875rem; }
-.custom-leading-3-5 { line-height: .875rem; }
-.custom-leading-4 { line-height: 1rem; }
-
-/* utility di stato */
-.cursor-pointer { cursor: pointer; }
-.transition-all { transition: all 0.3s ease-in-out; }
-
-/* stile specifico per il bottone giallo */
-.custom-btn-subscribe {
-    border: 1px solid;
-    min-width: 160px; /* Assicura che il testo "Special offer" ci stia comodamente */
-}
-
-.custom-btn-subscribe:hover {
-    filter: brightness(0.92); /* Effetto al passaggio del mouse */
-    transform: translateY(-1px);
-}
-
-.custom-btn-subscribe b {
-    letter-spacing: 0.05em;
-}
-/* gestione dell'altezza customizzata*/
-.custom-h-lg-13 {
-    transition: all 0.25s ease-in-out;
-}
-@media (min-width: 992px) {
-    .custom-h-lg-13 {
-        height: 3.25rem !important; /* Corrisponde a h-13 */
-    }
-}
-/* definizione della transizione (duration-250) */
-.transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 250ms;
-}
-/* cursor */
-.cursor-pointer { cursor: pointer; }
-
-/*  barre del menu hamburger */
-.custom-bar {
-    height: 2px;
-    width: 1rem;
-    border-radius: 50rem;
-    transition: opacity 0.3s ease;
-}
-
-.custom-hamburger-group:hover .custom-bar {
-    opacity: 0.5;
-}
-
-/* rimuove l'outline dei bottoni di default */
-.btn:focus, button:focus {
-    box-shadow: none;
-    outline: none;
-}
-/* altezza fissa e transizione*/
-.custom-nav-height {
-    height: 1rem; /* 16px */
-    transition: all 0.5s cubic-bezier(.4, 0, .2, 1);
-}
-
-/* Utility cursore */
-.cursor-pointer {
-    cursor: pointer;
-}
-
-.mx-3 {
-    margin-left: 1.25rem !important;
-    margin-right: 1.25rem !important;
-}
-.me-3 {
-    margin-right: 1.25rem !important;
-}
-.shadow-md {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
-}
-/* griglie */
-@media (min-width: 576px) {
-    .sm-grid { display: grid !important; }
-    .sm-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-}
-
-@media (min-width: 992px) {
-    .lg-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
-}
-
-.custom-font-condensed {
-    font-family: "Grot12 Condensed", "Arial Narrow", sans-serif;
-}
-
-.custom-text-4 {
-    font-size: 1rem;
-    line-height: 1.125rem;
-}
-
-.custom-text-4-5 {
-    font-size: 1.125rem;
-    line-height: 1;
-}
-.font-semibold {
-    font-weight: 600;
-}
-
-/* transizioni */
-.custom-mega-nav {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-    transition-duration: .2s;
-}
-
-/* x ccolore e hover ex tailwind */
-.text-primary {
-    color: rgba(34, 34, 34, 1) !important;
-}
-
-.hover-underline:hover {
-    text-decoration: underline !important;
-}
-
-/* dimensioni fisse (Sostituiscono le classi Tailwind specifiche) --- */
-@media (min-width: 576px) {
-    .sm-max-w-220 {
-        max-width: 220px !important;
-    }
-}
-/* classe che richiama il font */
-.custom-font-grot {
-    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif !important;
-}
-
-/* la dimensione 4.5 che non esiste in Bootstrap standard */
-.custom-text-4-5 {
-    font-size: 1.125rem !important;
-    line-height: 1 !important;
-}
-
-/* utility per il grassetto se bs fw-semibold non basta */
-.fw-semibold {
-    font-weight: 600 !important;
-}
-
-.font-semibold {
-    font-weight: 600;
-}
-.font-grot12-condensed {
-    font-family: Grot12 Condensed, Arial Narrow, sans-serif;
-}
-
-@media (min-width: 576px) {
-    .sm-grid-cols-2 {
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (min-width: 992px) {
-    .lg-grid-cols-3 {
-        display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-.nav-link:hover {
-    text-decoration: underline !important;
-}
-.nav-link {
-    font-size: 0.9rem; /* Simile a text-4 (14-16px) */
-    font-weight: 500;
-}
-/* per i titoli (GET IN TOUCH, NEWS, ecc) */
-.footer-title {
-    font-size: 1.250rem !important;
-}
-
-/* per i link del footer */
-.footer-link {
-    font-size: 1rem !important;
-    line-height: 1;
-}
-
-.type-section-header-2 {
-    font-family: 'Helvetica Condensed', 'Arial Narrow', sans-serif;
-    font-weight: 700;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    display: block;
-}
-.custom-inq-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* mobile */
-    gap: 1.25rem;
-}
-
-@media (min-width: 576px) {
-    .custom-inq-grid {
-        grid-template-columns: repeat(2, 1fr); /* tablet */
-    }
-}
-
-@media (min-width: 1024px) {
-    .custom-inq-grid {
-        /* proporzioni esatte richieste dall'Inquirer */
-        grid-template-columns: 42fr 33fr 25fr;
-        gap: 1.5rem;
-    }
-}
-
-:root {
-    --inq-text-main: rgba(34, 34, 34, 1);
-    --inq-text-light: rgba(89, 87, 96, 1);
-    --inq-blue-bullet: #1a6aff;
-    --inq-transition: cubic-bezier(0, 0, .2, 1);
-}
-/* titolo principale!!! */
-.inq-card-title {
-    font-family: 'Inquirer Headline', serif;
-    font-weight: 600;
-    line-height: 1;
-    transition: all 0.3s var(--inq-transition);
-    color: #000;
-}
-.inq-card-title:hover {
-    color: #004b8d;
-}
-/* testo */
-.inq-card-summary {
-    font-family: 'Inquirer Text WEB', Georgia, serif;
-    color: var(--inq-text-light);
-    line-height: 1.25rem;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-/* sottonotizie */
-.inq-related-link {
-    font-family: 'Inquirer Text WEB', serif;
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    color: var(--inq-text-main);
-    text-decoration: none;
-    transition: color 0.15s ease-in-out;
-}
-.inq-bullet-fixed {
-    width: 12px !important;
-    height: 12px !important;
-    min-width: 12px;
-    fill: #1a6aff !important;
-    margin-top: 4px;
-    flex-shrink: 0;
-}
-/* per gestire le  immgaini 3:2 */
-.aspect-3-2 {
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    width: 100%;
-}
-
-/* stile del titolo per la seconda notizia (leggermente più piccolo della principale) */
-.inq-headline-sm {
-    font-family: 'Inquirer Headline', 'Arial Narrow', sans-serif;
-    font-size: 1.75rem;
-    line-height: 1.1;
-    transition: color 0.3s cubic-bezier(0, 0, .2, 1);
-}
-
-.inq-headline-sm:hover {
-    color: #1a6aff !important; /* il blu dell'hover originale */
-}
-
-/* stile del testo del sommario */
-.inq-text-web {
-    font-family: 'Inquirer Text WEB', Georgia, serif;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-weight: 500;
-    color: rgba(89, 87, 96, 1) !important; /* colore og */
-}
-
-/* linea di separazione tra notizie */
-.border-top {
-    border-top: 1px solid #ddd !important;
-    opacity: 1;
-}
-
-/* titoli std */
-.inq-title-standard {
-    font-family: 'Inquirer Headline', 'Arial Narrow', sans-serif !important;
-    font-weight: 600 !important; /* Forza lo stesso peso per tutti */
-    font-size: 1.6rem !important; /* Dimensione text-2.5xl */
-    line-height: 1.05;
-    color: #000;
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    transition: color 0.2s ease-in-out;
-}
-
-.inq-title-standard:hover {
-    color: #1a6aff !important;
-}
-
-/* corpo */
-.inq-text-web-small {
-    font-family: 'Inquirer Text WEB', Georgia, serif;
-    font-size: 0.95rem;
-    line-height: 1.3;
-    font-weight: 400;
-    color: #595760;
-}
-
-/* IMMAGINE 3:2 */
-.inq-aspect-3-2 {
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-}
-
-hr {
-    border-top: 1px solid #e0e0e0;
-    opacity: 1;
-}
-
-.inq-related-link:hover {
-    color: #1a6aff;
-}
-
-/* titolo std */
-.inq-headline-standard {
-    font-family: 'Inquirer Headline', 'Arial Narrow', sans-serif !important;
-    font-size: 1.65rem !important;
-    line-height: 1.1;
-    color: #000;
-    transition: color 0.3s ease-out;
-}
-
-.inq-headline-standard:hover {
-    color: #1a6aff !important;
-}
-
-/* testo sommario*/
-.inq-text-body {
-    font-family: 'Inquirer Text WEB', Georgia, serif;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-weight: 500;
-    color: #595760;
-}
-
-/* img con ar Inquirer */
-.inq-aspect-3-2 {
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-}
-/*the latest!!!*/
-
-.inq-section-header {
-    border-top: 3px solid #000;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    margin-bottom: 0;
-}
-
-.headline-title-text {
-    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif;
-    font-weight: 600;
-    font-size: 2rem;
-    line-height: 2rem;
-    text-transform: uppercase;
-    color: #000;
-}
-
-/* el lista */
-.inq-headline-item-custom {
-    border-top: 1px solid #c4c4c4;
-    padding: 8px 0;
-    display: block; /* il contenitore è block, ma il contenuto interno sarà inline */
-}
-
-.inq-headline-item-custom:first-child {
-    border-top: 0 !important;
-}
-
-.inq-eyebrow-container {
-    display: inline; /*  per non mandare a capo il titolo */
-}
-
-.inq-eyebrow--text {
-    position: relative;
-    display: inline-block;
-    padding-right: 4px; /* spazio tra la fine dell'eyebrow e il titolo */
-    z-index: 1;
-}
-
-/* rettangolino rosso sotto "Opinion" */
-.inq-eyebrow--text:after {
-    content: "";
-    background-color: #e11b22;
-    height: 8px; /* spessore del rettangolo */
-    position: absolute;
-    bottom: 1px; /*  verticale rispetto al testo */
-    left: 0;
-    width: 100%;
-    z-index: -1; /* dietro al testo */
-}
-.fs-footer-links {
-    font-size: 16px;
-}
-
-.type-opinion-eyebrow {
-    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.95rem;
-    line-height: 1rem;
-    text-decoration: none !important;
-    color: #000 !important;
-}
-
-
-.inq-item-title {
-    font-family: 'Inquirer Text WEB', Georgia, serif;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    color: rgba(34, 34, 34, 1);
-    text-decoration: none;
-    display: inline;
-    vertical-align: baseline;
-}
-
-.inq-item-title:hover {
-    color: #1a6aff;
-}
-
-.inq-item-byline {
-    display: inline;
-    margin-left: 4px;
-}
-
-.type-article-details {
-    font-family: 'Grot10', Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.125rem;
-    font-weight: 300;
-    color: rgba(89, 87, 96, 1);
-    display: inline;
-}
-
-.inq-latest-link {
-    font-family: 'Inquirer Text WEB', Georgia, serif;
-    font-size: 1.05rem;
-    line-height: 1.25rem;
-    color: #222222;
-    font-weight: 400;
-    text-decoration: none;
-}
-
-.inq-latest-link:hover {
-    color: #1a6aff;
-}
-.inq-section-header {
-    border-top: 2px solid #000 !important;
-    padding-top: 12px;
-    margin-bottom: 24px;
-}
-.small-title {
-    font-family: 'Inquirer Headline', serif;
-    font-size: 1.6rem;
-    line-height: 2rem;
-}
-
-/* linea verticale divisoria solo su schermi grandi */
-@media (min-width: 768px) {
-    .border-end-md {
-        border-right: 1px solid #dee2e6 !important;
-    }
-}
-
-/* rimuove o aggiunge bordi in base al dispositivo */
-@media (max-width: 767px) {
-    .border-bottom-mobile {
-        border-bottom: 1px solid #dee2e6 !important;
-    }
-}
-/*most read*/
-.most-read-header {
-    border-top: 2px solid #000;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    font-family: 'Inquirer Text WEB', Georgia, serif;
-}
-
-.inq-headline-most-read:hover {
-    color: #444;
-}
-
-.inq-figure-3x2 {
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    overflow: hidden;
-    background-color: #f0f0f0;
-}
-
-.inq-figure-3x2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.most-read-container .col-md-3 {
-    margin-bottom: 2rem;
-}
-/*sports*/
-
-.font-inquirer-headline {
-    font-family: 'Inquirer Headline', Georgia, serif;
-    -webkit-font-smoothing: antialiased;
-}
-
-.type-section-header-2 {
-    font-family: 'Grot12 Condensed', 'Arial Narrow', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.border-neutral-black { border-color: #000000 !important; }
-.inq-section-header {
-    border-top: 2px solid #000;
-}
-
-.more-link {
-    font-weight: 800;
-    color: #000;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    border-bottom: 1px solid transparent;
-}
-
-.more-link:hover {
-    border-bottom: 1px solid #000;
-}
-
-/* griglia!*/
-.inq-grid-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .inq-grid-container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .item-hero {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-}
-
-.aspect-3-2 {
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    width: 100%;
-}
-.object-fit-cover {
-    object-fit: cover;
-}
-.transition-300 {
-    transition: all 0.3s ease-out;
-}
-article:hover {
-    opacity: 0.9;
 }
