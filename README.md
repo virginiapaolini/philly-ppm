@@ -1,4 +1,4 @@
-## The Philadelphia Inquirer - Homepage Replication ##
+the philadelphia inquirer -- homepage replication
 this project is a functional and responsive replication of the "The Philadelphia Inquirer" newspaper homepage (https://www.inquirer.com/)
 the task was developed as part of a web development assignment focused on layout precision, responsiveness, and accessibility
 
