@@ -19,6 +19,53 @@ body {
 .custom-mega-nav {
     display: none;
 }
+
+/* nav è nascosta di default */
+.global-app-bar.fixed-top {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.global-app-bar.fixed-top.is-sticky {
+    transform: translateY(0); /* ritorna in posizione */
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+/* container principale del logo */
+#logo-container {
+    width: 180px !important;
+    height: 80px;
+}
+
+/* Logo Mobile (fino a 575px) */
+.d-sm-none {
+    width: 100% !important;
+    height: auto;
+}
+
+/* logo desktop (da 576px in su) */
+@media (min-width: 576px) {
+    #logo-container {
+        width: 400px !important;
+    }
+
+    .d-sm-block {
+        width: 100% !important;
+        max-width: 400px;
+    }
+}
+
+a {
+    transition: color 0.3s ease; /*  cambio colore fluido */
+}
+/* passaggio del mouse */
+a:hover {
+    color: #1a6aff !important;
+}
 /* classe che lo rende visibile */
 .custom-mega-nav.is-visible {
     display: block !important;
@@ -294,18 +341,12 @@ body {
     --inq-text-main: rgba(34, 34, 34, 1);
     --inq-text-light: rgba(89, 87, 96, 1);
     --inq-blue-bullet: #1a6aff;
-    --inq-transition: cubic-bezier(0, 0, .2, 1);
 }
 /* titolo principale!!! */
 .inq-card-title {
     font-family: 'Inquirer Headline', serif;
     font-weight: 600;
     line-height: 1;
-    transition: all 0.3s var(--inq-transition);
-    color: #000;
-}
-.inq-card-title:hover {
-    color: #004b8d;
 }
 /* testo */
 .inq-card-summary {

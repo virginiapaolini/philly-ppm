@@ -81,3 +81,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+const threshold = document.getElementById('app-bar').offsetHeight;
+window.addEventListener('scroll', function() {
+    // Seleziona la seconda nav (quella con fixed-top)
+    const secondNav = document.querySelector('nav.fixed-top');
+
+    // Soglia dopo la quale la nav deve apparire (es. 200 pixel)
+    const scrollThreshold = 200;
+
+    if (window.scrollY > scrollThreshold) {
+        secondNav.classList.add('is-sticky');
+    } else {
+        secondNav.classList.remove('is-sticky');
+    }
+});
