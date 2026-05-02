@@ -21,7 +21,6 @@ document.addEventListener('click', function(event) {
         return; // Esci dalla funzione
     }
 
-    // --- GESTIONE SEARCH ---
     const searchBtn = event.target.closest('#search-toggle-desktop, #search-toggle-mobile, #search-toggle-sticky');
 
     if (searchBtn) {
@@ -43,8 +42,6 @@ document.addEventListener('click', function(event) {
         return;
     }
 
-    // --- CHIUDI TUTTO SE CLICCHI FUORI ---
-    // Se il click NON è dentro un menu o una search bar
     if (!event.target.closest('#mega-menu, #mega-menu2, #search-dropdown, #search-dropdown2')) {
         document.getElementById('mega-menu').classList.remove('is-visible');
         document.getElementById('mega-menu2').classList.remove('is-visible');
@@ -53,7 +50,7 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// STICKY NAV
+// nav !!!
 window.addEventListener('scroll', function() {
     const secondNav = document.querySelector('nav.fixed-top');
     if (secondNav) {
