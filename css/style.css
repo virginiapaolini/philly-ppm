@@ -16,7 +16,13 @@ body {
     z-index: 11 !important;
     box-sizing: border-box;
 }
-
+.custom-mega-nav {
+    display: none;
+}
+/* classe che lo rende visibile */
+.custom-mega-nav.is-visible {
+    display: block !important;
+}
 /* nascondi la search di base */
 .app-search-dropdown {
     max-height: 0;
