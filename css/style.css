@@ -16,9 +16,6 @@ body {
     z-index: 11 !important;
     box-sizing: border-box;
 }
-.custom-mega-nav {
-    display: none;
-}
 
 /* nav è nascosta di default */
 .global-app-bar.fixed-top {
@@ -70,62 +67,54 @@ a:hover {
 .custom-mega-nav.is-visible {
     display: block !important;
 }
-/* nascondi la search di base */
+/* 1. Definizione base del dropdown (unificata) */
 .app-search-dropdown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    /* INDISPENSABILE: top 100% lo incolla alla fine della nav */
+    top: 100%;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    background-color: white;
+    z-index: 1101;
+    transition: max-height 0.3s ease-in-out;
 }
 
-/* classe che apre la search bar */
+/* 2. quando è aperto */
 .app-search-dropdown.is-open {
-    max-height: 200px; /* regola in base all'altezza del contenuto */
+    max-height: 250px;
+    border-bottom: 1px solid #000;
 }
 
 .app-bar-wrapper {
-    /* larghezza massima specifica */
     max-width: 1240px;
     width: 100%;
-    /* altezza fissa per Mobile */
     height: 62px;
+    position: relative;
 }
 
 @media (min-width: 992px) {
     .app-bar-wrapper {
         height: 127px;
     }
-}
-/* pannello a comparsa */
+
 .app-search-dropdown {
-    left: 0;
-    top: 4rem;
-    height: 0;
-    transition: all 0.2s ease-in-out;
-    z-index: 1000;
+    width: 616px !important;
+    left: 0 !important;
+    top:102%;
 }
-
-/* quando il menu è aperto */
-.app-search-dropdown.is-open {
-    height: auto; /* O un'altezza specifica se preferisci l'animazione */
-}
-
-/* desktop */
-@media (min-width: 992px) {
-    .app-search-dropdown {
-        width: 616px !important;
-        left: 2rem !important; /* lg:left-8 */
-        top: 8rem !important;  /* lg:top-32 */
-    }
 }
 
 .search-input {
     font-family: 'Grot10', Arial, sans-serif;
-    border: 1px solid #6c757d; /* border-neutral-dark-gray */
+    border: 1px solid #6c757d;
     border-radius: 0;
 }
 
 .search-input:focus {
-    border-color: #007bff; /* primary-blue */
+    border-color: #007bff;
     box-shadow: none;
 }
 
@@ -623,7 +612,14 @@ hr {
 article:hover {
     opacity: 0.9;
 }
-
+/* Importante: usa !important se Bootstrap sta sovrascrivendo i tuoi stili */
+#mega-menu, #mega-menu2, #search-dropdown, #search-dropdown2 {
+    display: none !important;
+}
+#mega-menu.is-visible, #mega-menu2.is-visible,
+#search-dropdown.is-open, #search-dropdown2.is-open {
+    display: block !important;
+}
 /* FONT */
 @font-face {
     font-family: Inquirer Headline;

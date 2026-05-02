@@ -1,97 +1,66 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // selectors elementi
-    const menuDesktopBtn = document.getElementById('menu-toggle-desktop');
-    const menuMobileBtn = document.getElementById('menu-toggle-mobile');
-    const searchDesktopBtn = document.getElementById('search-toggle-desktop');
-    const searchMobileBtn = document.getElementById('search-toggle-mobile');
+document.addEventListener('click', function(event) {
+    const menuBtn = event.target.closest('#menu-toggle-desktop, #menu-toggle-mobile, #menu-toggle-sticky');
+    if (menuBtn) {
+        event.preventDefault();
+        // seleziona i due mega menu
+        const m1 = document.getElementById('mega-menu');
+        const m2 = document.getElementById('mega-menu2');
 
-    const megaMenu = document.getElementById('mega-menu');
-    const searchDropdown = document.getElementById('search-dropdown');
-
-    function toggleMenu() {
-        // Chiudiamo la search bar se è aperta
-        searchDropdown.classList.remove('is-open');
-        // Alterniamo il menu
-        megaMenu.classList.toggle('is-visible');
-    }
-
-    function toggleSearch() {
-        // chiudiamo il menu se è aperto
-        megaMenu.classList.remove('is-visible');
-        // alterniamo la search
-        searchDropdown.classList.toggle('is-open');
-
-        // focus automatico sull'input quando si apre
-        if(searchDropdown.classList.contains('is-open')) {
-            setTimeout(() => document.getElementById('search').focus(), 300);
-        }
-    }
-
-    if(menuDesktopBtn) menuDesktopBtn.addEventListener('click', toggleMenu);
-    if(menuMobileBtn) menuMobileBtn.addEventListener('click', toggleMenu);
-
-    if(searchDesktopBtn) searchDesktopBtn.addEventListener('click', toggleSearch);
-    if(searchMobileBtn) searchMobileBtn.addEventListener('click', toggleSearch);
-
-    // chiudi tutto se clicchi fuori dal menù!
-    document.addEventListener('click', function(event) {
-        const isClickInsideMenu = megaMenu.contains(event.target);
-        const isClickOnMenuBtn = menuDesktopBtn.contains(event.target) || menuMobileBtn.contains(event.target);
-        const isClickInsideSearch = searchDropdown.contains(event.target);
-        const isClickOnSearchBtn = searchDesktopBtn.contains(event.target) || searchMobileBtn.contains(event.target);
-
-        if (!isClickInsideMenu && !isClickOnMenuBtn && !isClickInsideSearch && !isClickOnSearchBtn) {
-            megaMenu.classList.remove('is-visible');
-            searchDropdown.classList.remove('is-open');
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const searchBtn = document.getElementById('mobile-search-btn');
-    const searchContainer = document.getElementById('search-dropdown-container');
-    const menuBtn = document.getElementById('mobile-menu-btn');
-
-    // --- FUNZIONALITÀ RICERCA ---
-    searchBtn.addEventListener('click', function() {
-        // Controlliamo se è già aperto (altezza > 0)
-        if (searchContainer.style.height === '0px' || searchContainer.style.height === '') {
-            searchContainer.style.height = '110px'; // Altezza necessaria per mostrare l'input
-            searchBtn.classList.add('active');
+        // se clicchi il tasto della sticky nav
+        if (menuBtn.id === 'menu-toggle-sticky') {
+            m1.classList.remove('is-visible'); // Chiudi l'altro
+            m2.classList.toggle('is-visible'); // Apri questo
         } else {
-            searchContainer.style.height = '0px';
-            searchBtn.classList.remove('active');
+            m2.classList.remove('is-visible'); // Chiudi l'altro
+            m1.classList.toggle('is-visible'); // Apri questo
         }
-    });
 
-    // --- FUNZIONALITÀ MENU ---
-    menuBtn.addEventListener('click', function() {
-        // Toggle di una classe 'open' per animare le tre linee (hamburger)
-        this.classList.toggle('open');
+        // chiudo le search quando apri il menu
+        document.getElementById('search-dropdown').classList.remove('is-open');
+        document.getElementById('search-dropdown2').classList.remove('is-open');
+        return; // Esci dalla funzione
+    }
 
-        // Qui dovresti aggiungere la logica per mostrare il menu vero e proprio
-        // Esempio: document.getElementById('main-menu-overlay').classList.toggle('visible');
-        console.log("Menu cliccato!");
-    });
+    // --- GESTIONE SEARCH ---
+    const searchBtn = event.target.closest('#search-toggle-desktop, #search-toggle-mobile, #search-toggle-sticky');
 
-    // Chiudi la ricerca se si clicca fuori
-    document.addEventListener('click', function(event) {
-        if (!searchContainer.contains(event.target) && !searchBtn.contains(event.target)) {
-            searchContainer.style.height = '0px';
+    if (searchBtn) {
+        event.preventDefault();
+        const s1 = document.getElementById('search-dropdown');
+        const s2 = document.getElementById('search-dropdown2');
+
+        if (searchBtn.id === 'search-toggle-sticky') {
+            s1.classList.remove('is-open');
+            s2.classList.toggle('is-open');
+        } else {
+            s2.classList.remove('is-open');
+            s1.classList.toggle('is-open');
         }
-    });
+
+        // Chiudi i menu quando apri la search
+        document.getElementById('mega-menu').classList.remove('is-visible');
+        document.getElementById('mega-menu2').classList.remove('is-visible');
+        return;
+    }
+
+    // --- CHIUDI TUTTO SE CLICCHI FUORI ---
+    // Se il click NON è dentro un menu o una search bar
+    if (!event.target.closest('#mega-menu, #mega-menu2, #search-dropdown, #search-dropdown2')) {
+        document.getElementById('mega-menu').classList.remove('is-visible');
+        document.getElementById('mega-menu2').classList.remove('is-visible');
+        document.getElementById('search-dropdown').classList.remove('is-open');
+        document.getElementById('search-dropdown2').classList.remove('is-open');
+    }
 });
-const threshold = document.getElementById('app-bar').offsetHeight;
+
+// STICKY NAV
 window.addEventListener('scroll', function() {
-    // Seleziona la seconda nav (quella con fixed-top)
     const secondNav = document.querySelector('nav.fixed-top');
-
-    // Soglia dopo la quale la nav deve apparire (es. 200 pixel)
-    const scrollThreshold = 200;
-
-    if (window.scrollY > scrollThreshold) {
-        secondNav.classList.add('is-sticky');
-    } else {
-        secondNav.classList.remove('is-sticky');
+    if (secondNav) {
+        if (window.scrollY > 200) {
+            secondNav.classList.add('is-sticky');
+        } else {
+            secondNav.classList.remove('is-sticky');
+        }
     }
 });
